@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aló Eventos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="src/img/a.png" type="image/x-icon" />
+  <link rel="stylesheet" href="capacitalo.css" />
+  <script src="script.js" defer></script>
+  <link rel="icon" type="image/png" href="./src/favicon-32x32.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Loader -->
+  <div id="loader" class="loader-container">
+    <div class="spinner"></div>
+</div>
+
+<script>
+    // Oculta el loader y muestra el contenido
+    window.addEventListener('load', function() {
+      var loader = document.getElementById('loader');
+      var content = document.getElementById('content');
+      loader.style.display = 'none';
+      content.style.display = 'block';
+    });
+  </script>
+<div id="content" style="display: none;">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <!-- Imagen que lleva al top de la página -->
+      <a href="index.html#somos-alo">
+        <img src="./src/img/Letra-alo.png" alt="Logo" class="aloImgNavbar" />
+      </a>
+
+      <!-- Botón hamburguesa que solo aparece en pantallas pequeñas -->
+      <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú desplegable -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#somos-alo">Somos Aló</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#customCarousel">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#acercaDeMi">Acerca de mí</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#testimonios">Testimonios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./galeria.html">FotografiAlo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./capacitalo.html">CapacitAlo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contactanos.html">Contactanos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section container my-5">
+    <h2 class="text-center mb-4">Nuestros Workshops</h2>
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card workshop-card" data-bs-toggle="modal" data-bs-target="#workshopModal1">
+          <img src="./src/img/capacitalo/coaching.JPG" class="card-img-top" alt="Workshop 1" />
+          <div class="card-body">
+            <h5 class="card-title">Coaching</h5>
+            <p class="card-text">
+              ¿Queres nuevas herramientas que te empoderen como organizador de
+              eventos? ¡Este workshop es para vos!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card workshop-card" data-bs-toggle="modal" data-bs-target="#workshopModal2">
+          <img src="./src/img/capacitalo/Como_manejar_las_cuentas_de_tu_negocio.jpeg" class="card-img-top"
+            alt="Workshop 2" />
+          <div class="card-body">
+            <h5 class="card-title">Como manejar las cuentas de tu negocio</h5>
+            <p class="card-text">
+              Técnicas para mejorar nuestros ingresos, hace rentable tu
+              emprendimiento.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card workshop-card" data-bs-toggle="modal" data-bs-target="#workshopModal3">
+          <img src="./src/img/capacitalo/gestion_de_la_imagen.jpeg" class="card-img-top" alt="Workshop 3" />
+          <div class="card-body">
+            <h5 class="card-title">Gestión de la imagen</h5>
+            <p class="card-text">
+              Descube cómo construir una imagen sólida y auténtica que conecte
+              con tu audiencia y refleje los valores de tu marca.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card workshop-card" data-bs-toggle="modal" data-bs-target="#workshopModal5">
+          <img src="./src/img/capacitalo/taller_ceremonial_social.jpeg" class="card-img-top" alt="Workshop 5" />
+          <div class="card-body">
+            <h5 class="card-title">Taller ceremonial social</h5>
+            <p class="card-text">
+              Diferenciate por "Las buenas maneras". Las reglas de oro para
+              ser el mejor anfitrión.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-4 mb-4">
+        <div class="card workshop-card" data-bs-toggle="modal" data-bs-target="#workshopModal6">
+          <img src="./src/img/capacitalo/experiencias_gastronomicas_de_alto_impacto.jpeg" class="card-img-top"
+            alt="Workshop 6" />
+          <div class="card-body">
+            <h5 class="card-title">
+              Experiencias gastronómicas de alto impacto
+            </h5>
+            <p class="card-text">
+              Un recorrido por tendencias gastronómicas y herramientas
+              innovadoras que te ayudarán a potenciar tu servicio y dejar
+              huellas en cada evento.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4 mb-4">
+        <div class="card workshop-card" data-bs-toggle="modal" data-bs-target="#workshopModal7">
+          <img src="./src/img/capacitalo/Organiza_tu_Propio_Evento.jpg" class="card-img-top" alt="Workshop 7" />
+          <div class="card-body">
+            <h5 class="card-title">Organizá tu propio evento</h5>
+            <p class="card-text">
+              10 puntos claves a la hora de empezar. Vení a descubrir como
+              organizar tu evento sin la necesidad de contratar a un
+              profesional.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 7 formulario -->
+      <div class="col-md-4 mb-4">
+        <div class="card workshop-card" data-bs-toggle="modal" data-bs-target="#workshopModalFuture1">
+          <img src="./src/img/capacitalo/proximamente.jpg" class="card-img-top" alt="Workshop 2" />
+          <div class="card-body">
+            <h5 class="card-title">Workshop de Congre - S.O.S.</h5>
+            <p class="card-text">
+              Aprendé las claves para dominar los Eventos Científicos sin estres.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Modal para Workshop 1 -->
+  <div class="modal fade" id="workshopModal1" tabindex="-1" aria-labelledby="workshopModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="workshopModalLabel1">
+            Workshop de Coaching
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselWorkshop1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./src/img/capacitalo/workshop 1/IMG-20240909-WA0018.jpg" class="d-block w-100 modal-img"
+                  alt="Foto Workshop 1 - 1" />
+              </div>
+              <div class="carousel-item">
+                <img src="./src/img/capacitalo/workshop 1/IMG-20240909-WA0019.jpg" class="d-block w-100 modal-img"
+                  alt="Foto Workshop 1 - 2" />
+              </div>
+              <div class="carousel-item">
+                <img src="./src/img/capacitalo/workshop 1/IMG-20240909-WA0020.jpg" class="d-block w-100 modal-img"
+                  alt="Foto Workshop 1 - 3" />
+              </div>
+              <div class="carousel-item">
+                <img src="./src/img/capacitalo/workshop 1/IMG-20240909-WA0022.jpg" class="d-block w-100 modal-img"
+                  alt="Foto Workshop 1 - 4" />
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselWorkshop1"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselWorkshop1"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para Workshop 2 -->
+  <div class="modal fade" id="workshopModal2" tabindex="-1" aria-labelledby="workshopModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="workshopModalLabel2">
+            Workshop de Como manejar las cuentas de tu negocio
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselWorkshop2" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./src/img/capacitalo/workshop 2/IMG-20240511-WA0040.jpg" class="d-block w-100 modal-img"
+                  alt="Foto Workshop 2 - 1" />
+              </div>
+              <div class="carousel-item">
+                <img src="./src/img/capacitalo/workshop 2/IMG-20240909-WA0021.jpg" class="d-block w-100 modal-img"
+                  alt="Foto Workshop 2 - 2" />
+              </div>
+              <div class="carousel-item">
+                <img src="./src/img/capacitalo/workshop 2/WhatsApp Image 2024-09-09 at 22.45.38_dba48c4d.jpg"
+                  class="d-block w-100 modal-img" alt="Foto Workshop 2 - 3" />
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselWorkshop2"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselWorkshop2"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para Workshop 3 -->
+  <div class="modal fade" id="workshopModal3" tabindex="-1" aria-labelledby="workshopModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="workshopModalLabel">
+            Workshop de Gestión de la imagen
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselWorkshop3" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./src/img/capacitalo/workshop 3/IMG-20240909-WA0024.jpg" class="d-block w-100 modal-img"
+                  alt="Foto Workshop 3 - 1" />
+              </div>
+              <div class="carousel-item">
+                <img src="./src/img/capacitalo/workshop 3/IMG-20240909-WA0025.jpg" class="d-block w-100 modal-img"
+                  alt="Foto Workshop 3 - 2" />
+              </div>
+              <div class="carousel-item">
+                <img src="./src/img/capacitalo/workshop 3/IMG-20240909-WA0026.jpg" class="d-block w-100 modal-img"
+                  alt="Foto Workshop 3 - 3" />
+              </div>
+              <div class="carousel-item">
+                <img src="./src/img/capacitalo/workshop 3/WhatsApp Image 2024-09-09 at 22.45.38_50440354.jpg"
+                  class="d-block w-100 modal-img" alt="Foto Workshop 3 - 4" />
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselWorkshop3"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselWorkshop3"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para Workshop 5 -->
+  <div class="modal fade" id="workshopModal5" tabindex="-1" aria-labelledby="workshopModalLabel5" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="workshopModalLabel5">
+            Workshop de Taller ceremonial social
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselWorkshop5" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./src/img/capacitalo/taller_ceremonial_social.jpeg" class="d-block w-100 modal-img"
+                  alt="Foto Workshop 5 - 1" />
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselWorkshop5"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselWorkshop5"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para Workshop 5 -->
+  <div class="modal fade" id="workshopModal6" tabindex="-1" aria-labelledby="workshopModalLabel6" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="workshopModalLabel6">
+            Workshop de Experiencias gastronómicas de alto impacto
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselWorkshop6" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./src/img/capacitalo/workshop 5/IMG-20240909-WA0028.jpg" class="d-block w-100 modal-img"
+                  alt="Foto Workshop 5 - 1" />
+              </div>
+              <div class="carousel-item">
+                <img src="./src/img/capacitalo/workshop 5/IMG-20240909-WA0029.jpg" class="d-block w-100 modal-img"
+                  alt="Foto Workshop 5 - 2" />
+              </div>
+              <div class="carousel-item">
+                <img src="./src/img/capacitalo/workshop 5/WhatsApp Image 2024-09-09 at 22.45.38_15645e94.jpg"
+                  class="d-block w-100 modal-img" alt="Foto Workshop 5 - 3" />
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselWorkshop6"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselWorkshop6"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Modal de éxito -->
+  
+   <div id="successMessage" class="alert-success" style="display: none;">
+    Te has inscrito correctamente al workshop. Pronto recibirás más
+    detalles en tu correo electrónico.
+  </div>
+  <!-- Modal para Formulario -->
+  <div class="modal fade" id="workshopModalFuture1" tabindex="-1" aria-labelledby="workshopModalFutureLabel1"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="workshopModalFutureLabel1">
+            Inscripción al Workshop de Congre - S.O.S. 5/10/2024
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="capacitalo.php" method="post">
+            <!-- Nombre del Workshop (oculto) -->
+            <input type="hidden" name="workshop_name" value="Workshop de Congre - S.O.S." />
+            <!-- Fecha del Workshop (oculto) -->
+            <input type="hidden" name="workshop_date" value="5 de Octubre, 2024" />
+
+            <!-- Nombre del Cliente -->
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre completo</label>
+              <input type="text" class="form-control" id="name" name="name" required />
+            </div>
+            <!-- Email del Cliente -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" name="email" required />
+            </div>
+            <!-- Teléfono del Cliente -->
+            <div class="mb-3">
+              <label for="phone" class="form-label">Teléfono</label>
+              <input type="text" class="form-control" id="phone" name="phone" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Inscribirse</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Evita el envío real del formulario
+      
+      // Muestra el cartel de éxito
+      var successMessage = document.getElementById('successMessage');
+      successMessage.style.display = 'block';
+
+      // Oculta el cartel después de 3 segundos
+      setTimeout(function() {
+        successMessage.style.display = 'none';
+      }, 3000);
+    });
+  </script>
+
+  
+
+
+
+
+
+
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container-footer">
+      <a href="#somos-alo">
+        <img src="./src/img/Letra-alo.png" alt="Logo" class="aloImgNavbar" />
+      </a>
+      <ul>
+        <li><a href="https://www.facebook.com/alooficial1?locale=es_LA" target="_blank"><i
+              class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://www.instagram.com/alooficial_/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/mariana-raquel-martinez-56341a116/" target="_blank"><i
+              class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="https://wa.me/+5491170631818" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+      </ul>
+      <p class="rights">
+        © 2024 All rights reserved. <a href="#">GG Innovations</a>.
+      </p>
+    </div>
+  </footer>
+</div>
+
+  <script>
+    // Opcional: Si quieres que el modal se abra más lentamente
+    document
+      .getElementById("workshopModal1")
+      .addEventListener("show.bs.modal", function (event) {
+        setTimeout(function () {
+          document.getElementById("workshopModal1").classList.add("show");
+        }, 300); // Ajusta el tiempo si quieres más o menos demora
+      });
+  </script>
+
+  <!-- Script para mostrar el modal de éxito o error según el parámetro de la URL -->
+  <script>
+    // Detectar si hay un parámetro de éxito o error en la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get("status");
+
+    // Mostrar modal de éxito o error basado en el parámetro
+    if (status === "success") {
+      const successModal = new bootstrap.Modal(
+        document.getElementById("successModal")
+      );
+      successModal.show();
+    } else if (status === "error") {
+      const errorModal = new bootstrap.Modal(
+        document.getElementById("errorModal")
+      );
+      errorModal.show();
+    }
+  </script>
+
+  <!-- Scripts de Bootstrap y JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var navLinks = document.querySelectorAll(".nav-link");
+      var navbarCollapse = document.querySelector(".navbar-collapse");
+
+      navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (navbarCollapse.classList.contains("show")) {
+            // Colapsar el menú si está expandido
+            var bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+              toggle: true,
+            });
+            // Remover el fondo negro cuando el menú colapsa
+            navbarCollapse.style.backgroundColor = "transparent";
+          }
+        });
+      });
+    });
+  </script>
+
+
+  <!--////////////// MENU HAMBURGUESA /////////////////-->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var navbarToggler = document.querySelector('.navbar-toggler');
+      var navbarCollapse = document.querySelector('.navbar-collapse');
+      var navLinks = document.querySelectorAll('.nav-link');
+
+      // Función para abrir el menú
+      function openMenu() {
+        navbarCollapse.classList.add('show');
+        navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px'; // Permite la animación de apertura
+        navbarToggler.classList.add('active'); // Añadir la clase 'active' para transformar el ícono a "X"
+      }
+
+      // Función para cerrar el menú
+      function closeMenu() {
+        navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px'; // Establece la altura antes de cerrar
+        setTimeout(function () {
+          navbarCollapse.style.maxHeight = '0'; // Cierra con la animación
+        }, 10);
+        setTimeout(function () {
+          navbarCollapse.classList.remove('show'); // Quita la clase después de la transición
+          navbarToggler.classList.remove('active'); // Quita la clase 'active' para volver al ícono de hamburguesa
+        }, 500);
+      }
+
+      // Función para alternar el menú
+      function toggleMenu() {
+        if (navbarCollapse.classList.contains('show')) {
+          closeMenu();  // Cierra si está abierto
+        } else {
+          openMenu();  // Abre si está cerrado
+        }
+      }
+
+      // Evento de clic en el botón de hamburguesa
+      navbarToggler.addEventListener('click', function (event) {
+        event.stopPropagation();  // Evita que el clic en el botón cierre el menú
+        toggleMenu();
+      });
+
+      // Al hacer clic en cualquier enlace del menú, cierra el menú
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (navbarCollapse.classList.contains('show')) {
+            closeMenu();  // Cierra el menú con la animación
+          }
+        });
+      });
+
+      // Cerrar el menú al hacer clic fuera del menú o del botón de hamburguesa
+      document.addEventListener('click', function (event) {
+        if (navbarCollapse.classList.contains('show') && !navbarToggler.contains(event.target) && !navbarCollapse.contains(event.target)) {
+          closeMenu();  // Cierra el menú si está abierto y se hace clic fuera de él
+        }
+      });
+    });
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

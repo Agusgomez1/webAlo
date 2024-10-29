@@ -1,0 +1,903 @@
+/* ---------------------- ESTILOS GENERALES ---------------------- */
+
+body {
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(40, 37, 39);
+  color: white;
+}
+
+html {
+  scroll-padding-top: 110px; /* Ajusta este valor según la altura de tu navbar */
+}
+
+/* ---------------------- SCROLLBAR ---------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #808080;
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------------------- NAVBAR ---------------------- */
+/* Ajuste general del navbar */
+nav.navbar {
+  display: flex;
+  justify-content: space-between; /* Distribuye el logo y los enlaces horizontalmente */
+  align-items: center; /* Centra verticalmente los elementos */
+  background-color: rgb(0, 0, 0);
+  height: 80px; /* Mantén una altura fija para el navbar */
+  padding: 0 2rem; /* Añade un poco de espacio lateral */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.aloImgNavbar {
+  width: 10%; /* Ajusta el tamaño del logo */
+  height: auto;
+}
+
+nav.navbar .container {
+  display: flex;
+  justify-content: space-between; /* Distribuye el logo y el menú en el ancho del navbar */
+  align-items: center;
+  width: 100%;
+}
+
+nav.navbar .navbar-brand {
+  color: white;
+  text-align: center;
+}
+
+nav.navbar img {
+  width: 5rem;
+  height: 5rem;
+}
+
+nav.navbar ul {
+  list-style: none;
+  display: flex; /* Asegura que los elementos del menú estén en línea */
+  padding: 0;
+  margin: 0;
+}
+
+nav.navbar ul li {
+  display: inline-block;
+  margin-right: 2rem; /* Ajusta el espaciado entre los elementos del menú */
+  color: white;
+}
+
+nav.navbar ul li a {
+  text-decoration: none;
+  color: white; /* Color blanco en el estado normal */
+  position: relative;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+nav.navbar ul li a:hover,
+nav.navbar ul li a:focus,
+nav.navbar ul li a:active {
+  color: white; /* Mantener el color blanco en hover, focus y active */
+  border-bottom: 2px solid white;
+}
+
+nav.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+nav.navbar ul li a:hover {
+  color: white; /* Mantiene el color blanco durante el hover */
+}
+
+nav.navbar ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ---------------------- Ajuste del menú hamburguesa para pantallas pequeñas ---------------------- */
+
+@media (max-width: 992px) {
+  nav.navbar {
+    flex-direction: column; /* Apila el logo y el menú en pantallas pequeñas */
+    height: auto;
+  }
+
+  .navbar-collapse {
+    max-height: 0; /* Inicialmente, el menú está colapsado */
+    overflow: hidden; /* Oculta el contenido cuando está colapsado */
+    background-color: rgb(0, 0, 0);
+    transition: max-height 0.5s ease-in-out; /* Transición suave */
+  }
+
+  .navbar-collapse.show {
+    max-height: 500px; /* Ajusta según el tamaño de tu contenido */
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  nav.navbar ul li {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  /* ////////////////// Ajuste general del botón hamburguesa ////////////////// */
+  .navbar-toggler {
+    border: none;
+    background: none;
+    color: transparent;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Ajusta el tamaño del botón si es necesario */
+    height: 40px;
+  }
+
+  /* Ajuste de las barras del ícono hamburguesa */
+  .navbar-toggler-icon {
+    display: flex;
+    position: relative;
+    width: 25px;
+    height: 3px; /* Grosor de la barra */
+    background-image: none;
+    background-color: rgb(234, 218, 200); /* Color beige */
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Las barras superior e inferior */
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: rgb(234, 218, 200); /* Mismo color */
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Alinear correctamente las barras superior e inferior */
+  .navbar-toggler-icon::before {
+    top: -9px; /* Ajusta el espaciado de la barra superior */
+  }
+
+  .navbar-toggler-icon::after {
+    top: 9px; /* Ajusta el espaciado de la barra inferior */
+  }
+
+  /* Transformación en "X" */
+  .navbar-toggler.active .navbar-toggler-icon {
+    background-color: transparent;
+  }
+
+  .navbar-toggler.active .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .navbar-toggler.active .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+}
+
+/* ---------------------- loader ---------------------- */
+
+
+/* Estilos del loader */
+.loader-container {
+  position: fixed;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* Fondo blanco mientras carga */
+}
+
+.spinner {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+/* ---------------------- SECTION 1: Somos Aló ---------------------- */
+.section {
+  padding: 1rem 0;
+  background-color: rgb(40, 37, 39);
+  margin-top: 7rem;
+  margin-bottom: 6rem;
+}
+.section h2 {
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.somos-alo{
+  background-color: #0303036b; /* Color de respaldo */
+  margin-top: 0;
+  padding-top: 7rem;
+}
+
+@media (max-width: 768px) {
+  .somos-alo{
+    margin-top: 80px;
+  }
+}
+  @media (max-width: 670px) {
+    .somos-alo{
+      margin-top: 80px;
+    }
+  }
+  @media (max-width: 420px) {
+    .somos-alo{
+      margin-top: 80px;
+    }
+  }
+  @media (max-width: 390px) {
+    .somos-alo{
+      margin-top: 80px;
+    }
+  }
+  
+  @media (max-width: 420px) {
+    .somos-alo{
+      margin-top: 80px;
+    }
+  }
+/* ---------------------- CAROUSEL ---------------------- */
+
+.carousel-container {
+  max-width: 70%; /* Ajusta el tamaño máximo del carousel al 70% del contenedor principal */
+  margin: 0 auto; /* Centra la sección */
+  padding: 15px 0; /* Añade espacio superior e inferior si es necesario */
+  position: relative; /* Asegura que los controles estén bien posicionados */
+  overflow: hidden; /* Asegura que no haya desbordamiento de contenido */
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+/* Fondo negro con 50% de opacidad */
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con 50% de opacidad */
+  z-index: 1;
+}
+
+.carousel-item img {
+  width: 100%; /* Asegura que la imagen ocupe el 100% del contenedor */
+  height: auto; /* Mantiene las proporciones de la imagen */
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Centra el texto horizontal y verticalmente */
+  text-align: center;
+  z-index: 2; /* Asegura que el texto esté por encima de la capa de opacidad */
+  width: 90%; /* Ajusta el ancho para centrar el texto en pantallas más pequeñas */
+}
+
+.carousel-caption h5 {
+  font-size: 2rem; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+  font-weight: bold;
+  color: white;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+  color: white;
+}
+
+.carousel-caption .btn {
+  background-color: #f5f5dc; /* Color beige */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: black; /* Cambia el color del texto si es necesario */
+}
+
+.carousel-caption .btn:hover {
+  background-color: #757570; /* Un tono ligeramente más oscuro de beige para el hover */
+}
+
+/* Estilo para los controles de navegación */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%; /* Ajusta el tamaño del área activa de los controles */
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo de los iconos */
+  border-radius: 50%; /* Bordes redondeados para los iconos */
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: 100%; /* Ajusta el tamaño máximo del carousel al 70% del contenedor principal */
+  }
+  .carousel-caption h5 {
+    font-size: 1.5rem; /* Ajusta el tamaño del texto para pantallas medianas */
+  }
+
+  .carousel-caption p {
+    font-size: 0.875rem; /* Ajusta el tamaño del párrafo para pantallas medianas */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    max-width: 100%; /* Ajusta el tamaño máximo del carousel al 70% del contenedor principal */
+  }
+  .carousel-caption h5 {
+    font-size: 1.25rem; /* Ajusta el tamaño del texto para pantallas pequeñas */
+  }
+
+  .carousel-caption p {
+    font-size: 0.75rem; /* Ajusta el tamaño del párrafo para pantallas pequeñas */
+  }
+
+  .carousel-caption .btn {
+    padding: 8px 16px; /* Ajusta el tamaño del botón para pantallas pequeñas */
+    font-size: 0.875rem; /* Ajusta el tamaño del texto en el botón */
+  }
+}
+
+/* ---------------------- CARDS ---------------------- */
+.card h5 {
+  color: black; /* Color del título en las tarjetas */
+}
+.card h4 {
+  color: black; /* Color del título en las tarjetas */
+}
+.card p {
+  color: #5e5e5e; /* Color del texto en las tarjetas */
+}
+.card {
+  padding: 1rem;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.card-body {
+  flex-grow: 1;
+}
+
+/* ---------------------- ACERCA DE MI ---------------------- */
+
+.team-section {
+  margin-top: 6rem;
+  color: white;
+  background: url("patron.png") repeat;
+  background-color: #0303036b; /* Color de respaldo */
+  text-align: center;
+  padding: 50px;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.team-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.team-member {
+  position: relative;
+  cursor: pointer;
+}
+
+#acercaDeMi img {
+  width: 50%;
+}
+
+.member-image {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.info-panel {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.team-member:hover .info-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-230px);
+}
+
+.team-member:hover .member-image {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  #acercaDeMi img {
+    width: 60%;
+  }
+
+  .info-panel {
+    width: 90%; /* Asegura que el panel ocupe el 90% del ancho */
+    margin: 0 auto; /* Centra horizontalmente */
+    top: 100%; /* Coloca el panel justo debajo de la imagen */
+    transform: translateY(
+      10px
+    ); /* Añade un pequeño desplazamiento hacia abajo */
+    text-align: center; /* Centra el texto */
+    left: 41%; /* Centra el panel horizontalmente */
+    transform: translateX(-50%) translateY(10px); /* Combina las transformaciones para centrar correctamente */
+  }
+
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la imagen y el cuadro de texto */
+    margin-bottom: 20px; /* Añade espacio debajo del miembro del equipo */
+  }
+
+  .info-panel p {
+    word-wrap: break-word;
+    font-size: 1rem; /* Ajusta el tamaño del texto para mejor legibilidad */
+  }
+}
+
+
+/* ------- IPHONE 14 PRO MAX ------- */
+@media (max-width: 670px) {
+  #acercaDeMi img {
+    width: 80%;
+  }
+
+  .info-panel {
+    width: 100%; /* Asegura que el panel ocupe el 90% del ancho */
+    margin: 0 auto; /* Centra horizontalmente */
+    top: 100%; /* Coloca el panel justo debajo de la imagen */
+    text-align: center; /* Centra el texto */
+    left: 70%; /* Centra el panel horizontalmente */
+  }
+
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la imagen y el cuadro de texto */
+    margin-bottom: 20px; /* Añade espacio debajo del miembro del equipo */
+  }
+
+  .info-panel p {
+    word-wrap: break-word;
+    font-size: 1rem; /* Ajusta el tamaño del texto para mejor legibilidad */
+  }
+}
+
+
+/* ------- IPHONE XR ------- */
+@media (max-width: 420px) {
+  #acercaDeMi img {
+    width: 80%;
+  }
+
+  .info-panel {
+    width: 100%; /* Asegura que el panel ocupe el 90% del ancho */
+    margin: 0 auto; /* Centra horizontalmente */
+    top: 100%; /* Coloca el panel justo debajo de la imagen */
+    text-align: center; /* Centra el texto */
+    left: 73%; /* Centra el panel horizontalmente */
+  }
+
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la imagen y el cuadro de texto */
+    margin-bottom: 20px; /* Añade espacio debajo del miembro del equipo */
+  }
+
+  .info-panel p {
+    word-wrap: break-word;
+    font-size: 0.9rem; /* Ajusta el tamaño del texto para mejor legibilidad */
+  }
+}
+
+
+/* ------- IPHONE 12 PRO ------- */
+@media (max-width: 390px) {
+  #acercaDeMi img {
+    width: 80%;
+  }
+
+  .info-panel {
+    width: 100%; /* Asegura que el panel ocupe el 90% del ancho */
+    margin: 0 auto; /* Centra horizontalmente */
+    top: 100%; /* Coloca el panel justo debajo de la imagen */
+    text-align: center; /* Centra el texto */
+    left: 79%; /* Centra el panel horizontalmente */
+  }
+
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la imagen y el cuadro de texto */
+    margin-bottom: 20px; /* Añade espacio debajo del miembro del equipo */
+  }
+
+  .info-panel p {
+    word-wrap: break-word;
+    font-size: 0.8rem; /* Ajusta el tamaño del texto para mejor legibilidad */
+  }
+}
+
+
+/* ------- IPHONE SE ------- */
+@media (max-width: 420px) {
+  #acercaDeMi img {
+    width: 80%;
+  }
+
+  .info-panel {
+    width: 100%; /* Asegura que el panel ocupe el 90% del ancho */
+    margin: 0 auto; /* Centra horizontalmente */
+    top: 100%; /* Coloca el panel justo debajo de la imagen */
+    text-align: center; /* Centra el texto */
+    left: 83%; /* Centra el panel horizontalmente */
+  }
+
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la imagen y el cuadro de texto */
+    margin-bottom: 20px; /* Añade espacio debajo del miembro del equipo */
+  }
+
+  .info-panel p {
+    word-wrap: break-word;
+    font-size: 0.9rem; /* Ajusta el tamaño del texto para mejor legibilidad */
+  }
+}
+
+
+
+/* ---------------------- Animaciones ---------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------- Media queries para pantallas pequeñas ---------------------- */
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0;
+  }
+}
+
+/* ---------------------- SECTION 4: Testimonios ---------------------- */
+
+#testimonios img {
+  height: 50%;
+  width: 55%;
+  border-radius: 50%;
+}
+
+#testimonios .card {
+  align-items: center;
+}
+
+#testimonios .col-md-4 {
+  padding: 1rem;
+}
+
+#testimonios .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Asegurar que el contenido del modal esté centrado */
+.modal-dialog-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 70%;
+  max-height: 70%;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.modal h6 {
+  color: black;
+}
+video {
+  border-radius: 1rem;
+  padding: 0.3rem;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ---------------------- Contenedor que mantiene la card centrada inicialmente ---------------------- */
+.card-mariana {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-container {
+  max-width: 500px;
+}
+
+/* ---------------------- Estilos para la animación ---------------------- */
+.about-card {
+  transition: transform 0.5s ease;
+}
+
+.about-card img {
+  height: 500px;
+}
+
+.about-card.shift-left {
+  transform: translateX(-120%);
+}
+
+.about-info {
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+}
+
+.about-info.show-info {
+  opacity: 1;
+  display: block;
+}
+
+.info-text {
+  height: 500px;
+  width: 500px;
+  text-align: left;
+  padding: 20px;
+}
+
+.about-info {
+  display: none;
+}
+
+/* Estilos para la notificación */
+.notification {
+  position: fixed;
+  top: -100px; /* Inicialmente fuera de la pantalla */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #444;
+  color: white;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 1000;
+}
+
+.notification.show {
+  top: 20px; /* Se desliza hacia abajo */
+  opacity: 1;
+}
+
+.notification.success {
+  background-color: #28a745; /* Verde para éxito */
+}
+
+.notification.error {
+  background-color: #dc3545; /* Rojo para error */
+}
+
+/* Ocultar la notificación después de un tiempo */
+.notification.hide {
+  opacity: 0;
+  top: -100px;
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Asegura que el botón esté encima de otros elementos */
+  background-color: #25d366; /* Color de fondo de WhatsApp */
+  border-radius: 50%; /* Botón circular */
+  padding: 10px; /* Espacio dentro del botón */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para que se vea más prominente */
+}
+
+.whatsapp-button img {
+  width: 50px; /* Tamaño del ícono de WhatsApp */
+  height: 50px;
+}
+
+.whatsapp-button:hover {
+  transform: scale(
+    1.1
+  ); /* Efecto de hover para agrandar ligeramente el botón */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ---------------------- Ajustes del footer ---------------------- */
+/* Elimina cualquier margen y padding en todo el documento */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Previene el deslizamiento horizontal */
+}
+
+footer {
+  background-color: rgb(0, 0, 0); /* Fondo negro */
+  padding: 1rem 0; /* Espaciado en el footer */
+  text-align: center; /* Centrar todo el contenido */
+  color: white; /* Texto blanco */
+  width: 100%; /* Ocupa todo el ancho disponible, sin excederse */
+  position: relative; /* Posicionamiento relativo para estar al final del contenido */
+  box-sizing: border-box; /* Incluye padding en el cálculo del tamaño */
+  margin: 0; /* Elimina cualquier margen extra */
+}
+
+.container-footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer .logo {
+  display: block;
+  margin: 0 auto 1rem auto; /* Centrar el logo y darle margen inferior */
+  max-width: 150px; /* Ajusta el tamaño del logo */
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centra los enlaces del menú */
+  gap: 2rem; /* Espacio entre los enlaces */
+}
+
+footer ul li {
+  display: inline-block;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem; /* Tamaño del texto de los enlaces */
+  transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+  color: #f5f5dc; /* Color beige en hover */
+}
+
+footer .social-icons {
+  margin: 1rem 0;
+}
+
+footer .social-icons a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  font-size: 1.5rem; /* Tamaño de los iconos */
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #f5f5dc; /* Color beige en hover */
+  transform: scale(1.1); /* Efecto de agrandamiento en hover */
+}
+
+footer .rights {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+footer .rights a {
+  color: #f5f5dc; /* Enlace en color beige */
+  text-decoration: none;
+}
+
+footer .rights a:hover {
+  text-decoration: underline; /* Subrayado en hover para el enlace */
+}

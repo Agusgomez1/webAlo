@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aló Eventos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="src/img/a.png" type="image/x-icon" />
+    <link rel="stylesheet" href="contactanos.css" />
+    <link rel="icon" type="image/png" href="./src/favicon-32x32.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Loader -->
+  <div id="loader" class="loader-container">
+    <div class="spinner"></div>
+</div>
+
+<script>
+    // Oculta el loader y muestra el contenido
+    window.addEventListener('load', function() {
+      var loader = document.getElementById('loader');
+      var content = document.getElementById('content');
+      loader.style.display = 'none';
+      content.style.display = 'block';
+    });
+  </script>
+    <div id="notification" class="notification"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <!-- Imagen que lleva al top de la página -->
+        <a href="#somos-alo">
+          <img src="./src/img/Letra-alo.png" alt="Logo" class="aloImgNavbar" />
+        </a>
+
+        <!-- Botón hamburguesa que solo aparece en pantallas pequeñas -->
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú desplegable -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#somos-alo">Somos Aló</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#customCarousel"
+                >Servicios</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#acercaDeMi"
+                >Acerca de mí</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#testimonios"
+                >Testimonios</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./galeria.html">FotografiAlo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./capacitalo.html">CapacitAlo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contactanos.html">Contactanos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- CONTACTO -->
+      <section class="contact-section">
+          <!-- Parte de la imagen y el texto de contacto -->
+          <div class="background-image">
+              <div class="container">
+                  <h1>Contactanos</h1>
+                  <p>
+                      ¡Conversemos sobre tus ideas y cómo podemos hacerlas realidad!
+                  </p>
+              </div>
+          </div>
+  
+          <!-- Formulario de contacto -->
+          <div class="form-container">
+              <div class="container clearfix">
+                  <div class="form-left">
+                      <form action="enviar.php" method="POST">
+                          <div class="form-fields">
+                              <div class="form-group half-width">
+                                  <label for="name">Nombre *</label>
+                                  <input type="text" id="name" name="nombre" required />
+                              </div>
+                              <div class="form-group half-width">
+                                  <label for="email">Email *</label>
+                                  <input type="email" id="email" name="email" required />
+                              </div>
+                              <div class="form-group half-width">
+                                  <label for="telefono">Teléfono *</label>
+                                  <input type="tel" id="telefono" name="telefono" required />
+                              </div>
+                          </div>
+                          <div class="form-group full-width message-box">
+                              <label for="message">Mensaje *</label>
+                              <textarea id="message" name="mensaje" rows="7" required></textarea>
+                          </div>
+                          <button type="submit" class="submit-btn">Enviar</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </section>
+  </main>
+  
+  <!-- Script para mostrar ventana emergente en caso de éxito -->
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const params = new URLSearchParams(window.location.search);
+          if (params.get('status') === 'success') {
+              alert('¡Tu consulta se envió correctamente!');
+          } else if (params.get('status') === 'error') {
+              alert('Hubo un error al enviar tu consulta. Inténtalo de nuevo.');
+          }
+      });
+  </script>
+  
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container-footer">
+        <a href="#somos-alo">
+          <img src="./src/img/Letra-alo.png" alt="Logo" class="aloImgNavbar" />
+        </a>
+        <ul>
+          <li>
+            <a
+              href="https://www.facebook.com/alooficial1?locale=es_LA"
+              target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/alooficial_/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/mariana-raquel-martinez-56341a116/"
+              target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://wa.me/+5491170631818" target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </li>
+        </ul>
+        <p class="rights">
+          © 2024 All rights reserved. <a href="#">GG Innovations</a>.
+        </p>
+      </div>
+    </footer>
+
+    <!--////////////// Script para mostrar el modal de éxito o error según el parámetro de la URL /////////////////-->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Detectar si hay un parámetro de éxito o error en la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get("status");
+
+        // Mostrar modal de éxito o error basado en el parámetro
+        if (status === "success") {
+          const successModal = new bootstrap.Modal(
+            document.getElementById("successModal")
+          );
+          successModal.show();
+          removeStatusParam(); // Eliminar el parámetro después de mostrar el modal
+        } else if (status === "error") {
+          const errorModal = new bootstrap.Modal(
+            document.getElementById("errorModal")
+          );
+          errorModal.show();
+          removeStatusParam(); // Eliminar el parámetro después de mostrar el modal
+        }
+
+        // Función para eliminar el parámetro "status" de la URL
+        function removeStatusParam() {
+          const newUrl = window.location.href.split("?")[0]; // Obtiene la URL sin parámetros
+          window.history.pushState({}, document.title, newUrl); // Reemplaza la URL en la barra sin recargar
+        }
+      });
+    </script>
+  </body>
+</html>

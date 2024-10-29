@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aló Eventos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="src/img/a.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="./src/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body id="somos-alo">
+    <!-- Loader -->
+    <div id="loader" class="loader-container">
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        // Oculta el loader y muestra el contenido
+        window.addEventListener('load', function() {
+          var loader = document.getElementById('loader');
+          var content = document.getElementById('content');
+          loader.style.display = 'none';
+          content.style.display = 'block';
+        });
+      </script>
+    <div id="notification" class="notification"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <!-- Imagen que lleva al top de la página -->
+            <a href="#somos-alo">
+                <img src="./src/img/Letra-alo.png" alt="Logo" class="aloImgNavbar">
+            </a>
+
+            <!-- Botón hamburguesa que solo aparece en pantallas pequeñas -->
+
+            <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+
+            <!-- Menú desplegable -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#somos-alo">Somos Aló</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#customCarousel">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#acercaDeMi">Acerca de mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonios">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./galeria.html">FotografiAlo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./capacitalo.html">CapacitAlo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contactanos.html">Contactanos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Section 1: Somos Aló -->
+    <section id="somos-alo" class="section somos-alo text-center fade-in">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-md-start text-center mb-4 mb-md-0">
+                    <h2>
+                        Diseñamos, coordinamos, organizamos y planificamos tus eventos.
+                    </h2>
+                    <p>~ Creamos experiencias únicas</p>
+                </div>
+                <div class="col-md-6 text-md-end text-center">
+                    <img src="./src/Logo Aló.png" alt="Logo de Aló Eventos" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Servicios -->
+
+    <div class="carousel-container">
+        <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./src/Evento corporativo.jpg" class="d-block w-100" alt="Evento Corporativo" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Eventos Corporativos</h5>
+                        <p>
+                            Team building, workshops, lanzamientos de productos, family day,
+                            aniversarios, ferias y exposiciones.
+                        </p>
+                        <a href="./contactanos.html" class="btn btn-primary">Quiero saber más!</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./src/Evento cientifico.JPG" class="d-block w-100" alt="Evento Científico" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Eventos Científicos</h5>
+                        <p>
+                            Congresos, jornadas, conferencias, simposios, seminarios, mesas
+                            redondas.
+                        </p>
+                        <a href="./contactanos.html" class="btn btn-primary">Quiero saber más!</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./src/img/Vicky_546.JPG" class="d-block w-100" alt="Evento Social" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Eventos Sociales</h5>
+                        <p>Bodas, cumpleaños de 15, baby shower.</p>
+                        <a href="./contactanos.html" class="btn btn-primary">Quiero saber más!</a>
+                    </div>
+                </div>
+                <!-- Agrega más carousel items si es necesario -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- Section 3: Acerca de mí -->
+    <div class="team-section">
+        <div class="team-member" id="acercaDeMi">
+            <img src="./src/mariana.jpg" alt="Team Member" class="member-image">
+            <div class="info-panel">
+                <p>Soy Mariana Martinez, fundadora de Aló. Cuento con una formación
+                    profesional en organización de eventos y hace más de 20 años que
+                    reafirmo que soy una apasionada por lo que hago, por eso me
+                    dedico a crear experiencias únicas..</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    <!-- Section 4: Testimonios -->
+    <section id="testimonios" class="section text-center fade-in">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <h4>Alan Haslop</h4>
+                        <img src="./src/Alan_Haslop.PNG" class="card-img-top" alt="Testimonio 1" />
+                        <div class="card-body">
+                            <h5>Gerente regional laboratorios APITER</h5>
+                            <p class="card-text">
+                                "Es impresionante como año a año han mejorado."
+                            </p>
+                            <button class="btn btn-outline-dark" data-bs-toggle="modal"
+                                data-bs-target="#testimonioModal1">
+                                Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <h4>Dra Romina Vaccalluzo</h4>
+                        <img src="./src/Dra_Romina_Vaccalluzo.PNG" class="card-img-top" alt="Testimonio 2" />
+                        <div class="card-body">
+                            <h5>Presidente del VIII Congreso Internacional de la AIACH</h5>
+                            <p class="card-text">
+                                "Fue un exitazo, gracias al equipo de Aló."
+                            </p>
+                            <button class="btn btn-outline-dark" data-bs-toggle="modal"
+                                data-bs-target="#testimonioModal2">
+                                Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <h4>Dra Gabriela Carro</h4>
+                        <img src="./src/Dra_Gabriela_Carro.PNG" class="card-img-top" alt="Testimonio 3" />
+                        <div class="card-body">
+                            <h5>Tesorera de la AIACH</h5>
+                            <p class="card-text">"Tremenda organización"</p>
+                            <button class="btn btn-outline-dark" data-bs-toggle="modal"
+                                data-bs-target="#testimonioModal3">
+                                Ver video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para los videos de testimonios -->
+    <div class="modal fade" id="testimonioModal1" tabindex="-1" aria-labelledby="testimonioModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="testimonioModalLabel1"><strong>Alan Haslop</strong></h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <video id="video1" controls>
+                        <source src="./src/Testimonio_Alan.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="testimonioModal2" tabindex="-1" aria-labelledby="testimonioModalLabel2"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="testimonioModalLabel2">
+                        <strong>Dra Romina Vaccalluzo</strong>
+                    </h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <video id="video2" controls>
+                        <source src="./src/Testimonio_Romina.mp4" type="video/mp4" />
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="testimonioModal3" tabindex="-1" aria-labelledby="testimonioModalLabel3"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="testimonioModalLabel3">
+                        <strong>Dra Gabriela Carro</strong>
+                    </h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <video id="video3" controls>
+                        <source src="./src/Testimonio_Gabriela.mp4" type="video/mp4" />
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal de éxito -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">¡Mensaje enviado!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto contigo pronto.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de error -->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="errorModalLabel">Error al enviar el mensaje</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente más tarde.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTON DE WHATSAPP -->
+    <a href="https://wa.me/+5491170631818" class="whatsapp-button" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container-footer">
+            <a href="#somos-alo">
+                <img src="./src/img/Letra-alo.png" alt="Logo" class="aloImgNavbar" />
+            </a>
+            <ul>
+                <li><a href="https://www.facebook.com/alooficial1?locale=es_LA" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/alooficial_/" target="_blank"><i
+                            class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/mariana-raquel-martinez-56341a116/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://wa.me/+5491170631818" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+            </ul>
+            <p class="rights">
+                © 2024 All rights reserved. <a href="#">GG Innovations</a>.
+            </p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+    <!-- ---------------------- Scripts de Bootstrap y JavaScript ---------------------- -->
+
+
+    <!--////////////// MENU HAMBURGUESA /////////////////-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var navbarToggler = document.querySelector('.navbar-toggler');
+            var navbarCollapse = document.querySelector('.navbar-collapse');
+            var navLinks = document.querySelectorAll('.nav-link');
+
+            // Función para abrir el menú
+            function openMenu() {
+                navbarCollapse.classList.add('show');
+                navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px'; // Permite la animación de apertura
+                navbarToggler.classList.add('active'); // Añadir la clase 'active' para transformar el ícono a "X"
+            }
+
+            // Función para cerrar el menú
+            function closeMenu() {
+                navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px'; // Establece la altura antes de cerrar
+                setTimeout(function () {
+                    navbarCollapse.style.maxHeight = '0'; // Cierra con la animación
+                }, 10);
+                setTimeout(function () {
+                    navbarCollapse.classList.remove('show'); // Quita la clase después de la transición
+                    navbarToggler.classList.remove('active'); // Quita la clase 'active' para volver al ícono de hamburguesa
+                }, 500);
+            }
+
+            // Función para alternar el menú
+            function toggleMenu() {
+                if (navbarCollapse.classList.contains('show')) {
+                    closeMenu();  // Cierra si está abierto
+                } else {
+                    openMenu();  // Abre si está cerrado
+                }
+            }
+
+            // Evento de clic en el botón de hamburguesa
+            navbarToggler.addEventListener('click', function (event) {
+                event.stopPropagation();  // Evita que el clic en el botón cierre el menú
+                toggleMenu();
+            });
+
+            // Al hacer clic en cualquier enlace del menú, cierra el menú
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    if (navbarCollapse.classList.contains('show')) {
+                        closeMenu();  // Cierra el menú con la animación
+                    }
+                });
+            });
+
+            // Cerrar el menú al hacer clic fuera del menú o del botón de hamburguesa
+            document.addEventListener('click', function (event) {
+                if (navbarCollapse.classList.contains('show') && !navbarToggler.contains(event.target) && !navbarCollapse.contains(event.target)) {
+                    closeMenu();  // Cierra el menú si está abierto y se hace clic fuera de él
+                }
+            });
+        });
+    </script>
+
+
+    <!--////////////// FUNCION PARA QUE EL LOGO TE LLEVE AL SOMOSALO /////////////////-->
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            const logoLink = document.querySelector('a[href="#somos-alo"]');
+
+            if (logoLink) {
+                logoLink.addEventListener("click", function (e) {
+                    e.preventDefault(); // Evita el comportamiento predeterminado
+
+                    const targetSection = document.querySelector("#somos-alo");
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80, // Ajusta el valor según la altura del navbar
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+
+
+
+    <!--////////////// ACERCA DE MI /////////////////-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const teamMember = document.querySelector('.team-member');
+            const infoPanel = document.querySelector('.info-panel');
+
+            let isPanelVisible = false;
+
+            // Solo activar en pantallas móviles
+            if (window.innerWidth <= 768) {
+                // Función para alternar la visibilidad del cuadro de texto
+                function toggleInfoPanel() {
+                    if (isPanelVisible) {
+                        infoPanel.style.opacity = '0';
+                        setTimeout(() => {
+                            infoPanel.style.display = 'none';
+                        }, 500);
+                        isPanelVisible = false;
+                    } else {
+                        infoPanel.style.display = 'block';
+                        setTimeout(() => {
+                            infoPanel.style.opacity = '1';
+                        }, 10);
+                        isPanelVisible = true;
+                    }
+                }
+
+                // Al hacer clic en la imagen
+                teamMember.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    toggleInfoPanel();
+                });
+
+                // Ocultar el panel al hacer scroll o clic fuera
+                document.addEventListener('click', function () {
+                    if (isPanelVisible) {
+                        infoPanel.style.opacity = '0';
+                        setTimeout(() => {
+                            infoPanel.style.display = 'none';
+                        }, 500);
+                        isPanelVisible = false;
+                    }
+                });
+
+                // Evita que el clic en el panel lo cierre si ya está abierto
+                infoPanel.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                });
+
+                window.addEventListener('scroll', function () {
+                    if (isPanelVisible) {
+                        infoPanel.style.opacity = '0';
+                        setTimeout(() => {
+                            infoPanel.style.display = 'none';
+                        }, 500);
+                        isPanelVisible = false;
+                    }
+                });
+            }
+        });
+
+    </script>
+
+
+    <!--////////////// TESTIMONIOS /////////////////-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Lista de modales y videos
+            const modals = [
+                { modalId: 'testimonioModal1', videoId: 'video1' },
+                { modalId: 'testimonioModal2', videoId: 'video2' },
+                { modalId: 'testimonioModal3', videoId: 'video3' }
+            ];
+
+            // Iterar sobre cada modal y video
+            modals.forEach(function (item) {
+                const modal = document.getElementById(item.modalId);
+                const video = document.getElementById(item.videoId);
+
+                // Evento que se activa cuando el modal se cierra
+                modal.addEventListener('hidden.bs.modal', function () {
+                    // Pausar el video y restablecer el tiempo a 0
+                    video.pause();
+                    video.currentTime = 0;
+                });
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

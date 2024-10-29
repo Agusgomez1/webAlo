@@ -1,0 +1,465 @@
+/* ---------------------- ESTILOS GENERALES ---------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(40, 37, 39); /* Cambia este valor al color que prefieras */
+
+}
+
+/* ---------------------- NAVBAR ---------------------- */
+/* Ajuste general del navbar */
+nav.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribuye el logo y los enlaces horizontalmente */
+    align-items: center; /* Centra verticalmente los elementos */
+    background-color: rgb(0, 0, 0);
+    height: 80px; /* Mantén una altura fija para el navbar */
+    padding: 0 2rem; /* Añade un poco de espacio lateral */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.aloImgNavbar {
+    width: 10%; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+nav.navbar .container {
+    display: flex;
+    justify-content: space-between; /* Distribuye el logo y el menú en el ancho del navbar */
+    align-items: center;
+    width: 100%;
+}
+
+nav.navbar .navbar-brand {
+    color: white;
+    text-align: center;
+}
+
+nav.navbar img {
+    width: 5rem;
+    height: 5rem;
+}
+
+nav.navbar ul {
+    list-style: none;
+    display: flex; /* Asegura que los elementos del menú estén en línea */
+    padding: 0;
+    margin: 0;
+}
+
+nav.navbar ul li {
+    display: inline-block;
+    margin-right: 2rem; /* Ajusta el espaciado entre los elementos del menú */
+    color: white;
+}
+
+nav.navbar ul li a {
+    text-decoration: none;
+    color: white; /* Color blanco en el estado normal */
+    position: relative;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+nav.navbar ul li a:hover,
+nav.navbar ul li a:focus,
+nav.navbar ul li a:active {
+    color: white; /* Mantener el color blanco en hover, focus y active */
+    border-bottom: 2px solid white;
+}
+
+nav.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+nav.navbar ul li a:hover {
+    color: white; /* Mantiene el color blanco durante el hover */
+}
+
+nav.navbar ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* ---------------------- Ajuste del menú hamburguesa para pantallas pequeñas  */
+@media (max-width: 992px) {
+    nav.navbar {
+      flex-direction: column; /* Apila el logo y el menú en pantallas pequeñas */
+      height: auto;
+    }
+  
+    .navbar-collapse {
+      max-height: 0; /* Inicialmente, el menú está colapsado */
+      overflow: hidden; /* Oculta el contenido cuando está colapsado */
+      background-color: rgb(0, 0, 0);
+      transition: max-height 0.5s ease-in-out; /* Transición suave */
+    }
+  
+    .navbar-collapse.show {
+      max-height: 500px; /* Ajusta según el tamaño de tu contenido */
+    }
+  
+    .navbar-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  
+    nav.navbar ul li {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+    
+    /* ////////////////// Ajuste general del botón hamburguesa ////////////////// */
+  .navbar-toggler {
+    border: none;
+    background: none;
+    color: transparent;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;  /* Ajusta el tamaño del botón si es necesario */
+    height: 40px;
+  }
+  
+  /* Ajuste de las barras del ícono hamburguesa */
+  .navbar-toggler-icon {
+    display: flex;
+    position: relative;
+    width: 25px;
+    height: 3px; /* Grosor de la barra */
+    background-image: none;
+    background-color: rgb(234, 218, 200); /* Color beige */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Las barras superior e inferior */
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: rgb(234, 218, 200); /* Mismo color */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Alinear correctamente las barras superior e inferior */
+  .navbar-toggler-icon::before {
+    top: -9px; /* Ajusta el espaciado de la barra superior */
+  }
+  
+  .navbar-toggler-icon::after {
+    top: 9px; /* Ajusta el espaciado de la barra inferior */
+  }
+  
+  /* Transformación en "X" */
+  .navbar-toggler.active .navbar-toggler-icon {
+    background-color: transparent;
+  }
+  
+  .navbar-toggler.active .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  
+  .navbar-toggler.active .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+
+
+}
+
+
+/* Estilos del loader */
+.loader-container {
+  position: fixed;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* Fondo blanco mientras carga */
+}
+
+.spinner {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+/* ---------------------- section---------------------- */
+
+.section {
+  padding-top: 3rem;
+ 
+
+}
+.section h2 {
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 1.2;
+  color: white;
+}
+
+
+
+
+/* ---------------------- cards ---------------------- */
+
+.card {
+  height: 100%; /* Asegura que todas las cards tengan la misma altura */
+  cursor: pointer;
+  position: relative; /* Permite modificar solo la card en hover */
+  z-index: 0; /* Asegura que las cards tengan un nivel base */
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden; /* Evita que el contenido desbordado afecte otras cards */
+  margin: 0 auto; /* Centra la card */
+}
+
+.card-img-top {
+  height: auto; /* Ajusta la altura de la imagen dentro de la card */
+  object-fit: cover; /* Hace que la imagen cubra todo el área de la card, recortando si es necesario */
+  transition: transform 0.3s ease-in-out;
+}
+
+.workshop-card:hover {
+  transform: scale(1.05);
+}
+ /* Estilos para el cartel de éxito */
+ .alert-success {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: #28a745; /* Color verde */
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  z-index: 9999; /* Asegura que esté encima de todo */
+  display: none;
+}
+
+/* ---------------------- MODAL WORKSHOPS ---------------------- */
+
+/* Transición suave del modal */
+.modal.fade .modal-dialog {
+    transition: transform 0.5s ease-out;
+  }
+
+  /* Ajustar las imágenes para que se vean completas dentro del modal */
+  .modal-img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+  }
+
+  /* Flechas dentro de un círculo, con estilo de botón */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    border-radius: 50%; /* Hace que las flechas estén dentro de un círculo */
+    padding: 10px; /* Espacio alrededor de la flecha */
+    width: 40px;
+    height: 40px;
+    display: flex; /* Flexbox para centrar */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    transition: background-color 0.3s ease; /* Transición suave para hover */
+  }
+
+  /* Ajustar la posición y tamaño de los botones para que solo ocupen el círculo */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 40px; /* Coincide con el tamaño del círculo */
+    height: 40px; /* Coincide con el tamaño del círculo */
+    top: 50%; /* Centrar verticalmente en el carrusel */
+    transform: translateY(-50%); /* Asegura que el botón esté perfectamente centrado */
+    position: absolute; /* Asegura que el botón esté bien posicionado en el carrusel */
+  }
+
+  /* Eliminar el área adicional de clic fuera del círculo */
+  .carousel-control-prev {
+    left: 10px; /* Ajusta la posición del botón de la izquierda */
+  }
+
+  .carousel-control-next {
+    right: 10px; /* Ajusta la posición del botón de la derecha */
+  }
+
+  /* Cambiar el tamaño de las flechas para que se vean bien en el círculo */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-size: 50%; /* Asegura que la flecha dentro del botón tenga un buen tamaño */
+  }
+
+  /* Eliminar el foco visual después de hacer clic */
+  .carousel-control-prev:focus,
+  .carousel-control-next:focus {
+    outline: none;
+  }
+
+  /* Efecto hover para hacer las flechas más visibles al pasar el mouse */
+  .carousel-control-prev:hover .carousel-control-prev-icon,
+  .carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.7); /* Se oscurece un poco más cuando se pasa el mouse */
+  }
+
+/* ---------------------- SCROLLBAR ---------------------- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #808080;
+}
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/**/
+.workshop-section {
+    padding: 50px 0;
+    color: white;
+    margin-top: 90px;
+}
+.workshop-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.workshop-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.workshop-item {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+}
+.workshop-item img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+.workshop-item h4 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+.workshop-item p {
+    font-size: 1rem;
+    color: white;
+}
+
+footer {
+    background-color: rgb(0, 0, 0); /* Fondo negro */
+    padding: 1rem 0; /* Espaciado en el footer */
+    text-align: center; /* Centrar todo el contenido */
+    color: white; /* Texto blanco */
+    width: 100%; /* Ocupa todo el ancho disponible, sin excederse */
+    position: relative; /* Posicionamiento relativo para estar al final del contenido */
+    box-sizing: border-box; /* Incluye padding en el cálculo del tamaño */
+    margin: 0; /* Elimina cualquier margen extra */
+}
+
+.container-footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer .logo {
+    display: block;
+    margin: 0 auto 1rem auto; /* Centrar el logo y darle margen inferior */
+    max-width: 150px; /* Ajusta el tamaño del logo */
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra los enlaces del menú */
+    gap: 2rem; /* Espacio entre los enlaces */
+}
+
+footer ul li {
+    display: inline-block;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem; /* Tamaño del texto de los enlaces */
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #f5f5dc; /* Color beige en hover */
+}
+
+footer .social-icons {
+    margin: 1rem 0;
+}
+
+footer .social-icons a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem; /* Tamaño de los iconos */
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #f5f5dc; /* Color beige en hover */
+    transform: scale(1.1); /* Efecto de agrandamiento en hover */
+}
+
+footer .rights {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+footer .rights a {
+    color: #f5f5dc; /* Enlace en color beige */
+    text-decoration: none;
+}
+
+footer .rights a:hover {
+    text-decoration: underline; /* Subrayado en hover para el enlace */
+}
