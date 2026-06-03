@@ -526,10 +526,11 @@ footer ul a:focus {
 }
 
 .footer-memberships img {
-  width: 132px;
-  height: 58px;
+  box-sizing: border-box;
+  width: 156px;
+  height: 76px;
   object-fit: contain;
-  padding: 0.55rem 0.75rem;
+  padding: 0.28rem 0.38rem;
   border-radius: 8px;
   background: rgba(255, 250, 243, 0.94);
 }
