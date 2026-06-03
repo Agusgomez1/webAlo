@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initVideoModals();
   initGallery();
   initWorkshops();
+  initFormSecurityFields();
   initContactStatus();
 });
 
@@ -234,7 +235,7 @@ function initGallery() {
       .map(function (image, index) {
         return `
           <button class="gallery-item reveal" type="button" data-lightbox-src="${image.src}" data-lightbox-alt="${image.alt}" style="transition-delay:${Math.min(index * 35, 280)}ms">
-            <img src="${image.src}" alt="${image.alt}" loading="lazy" />
+            <img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async" />
             <span>${getCategoryLabel(image.category)}</span>
           </button>
         `;
@@ -314,7 +315,7 @@ function initWorkshops() {
       return `
         <article class="workshop-card reveal" style="transition-delay:${Math.min(index * 45, 320)}ms">
           <button type="button" data-bs-toggle="modal" data-bs-target="#workshop-${workshop.id}">
-            <img src="${workshop.cover}" alt="${workshop.title}" loading="lazy" />
+            <img src="${workshop.cover}" alt="${workshop.title}" loading="lazy" decoding="async" />
             <span class="workshop-card__tag">${workshop.tag}</span>
             <div>
               <h3>${workshop.title}</h3>
@@ -344,7 +345,7 @@ function renderWorkshopModal(workshop) {
                     .map(function (image, index) {
                       return `
                         <div class="carousel-item ${index === 0 ? "active" : ""}">
-                          <img src="${image}" class="d-block w-100" alt="${workshop.title} ${index + 1}" />
+                          <img src="${image}" class="d-block w-100" alt="${workshop.title} ${index + 1}" loading="lazy" decoding="async" />
                         </div>
                       `;
                     })
@@ -386,6 +387,12 @@ function initContactStatus() {
     showToast("No pudimos enviar la consulta. Probá nuevamente en unos minutos.", "error");
     removeStatusParam();
   }
+}
+
+function initFormSecurityFields() {
+  document.querySelectorAll("[data-form-loaded-at]").forEach(function (field) {
+    field.value = Math.floor(Date.now() / 1000).toString();
+  });
 }
 
 function showToast(message, type) {

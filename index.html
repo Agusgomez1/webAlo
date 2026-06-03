@@ -9,6 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="src/img/a.png" type="image/x-icon" />
     <link rel="icon" type="image/png" href="./src/favicon-32x32.png">
+    <link rel="preload" as="image" href="./src/Evento corporativo.JPG">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
@@ -60,7 +63,7 @@
                         </div>
                     </div>
                     <div class="alo-hero__media">
-                        <img src="./src/Evento corporativo.JPG" alt="Evento corporativo organizado por Aló Eventos" />
+                        <img src="./src/Evento corporativo.JPG" alt="Evento corporativo organizado por Aló Eventos" fetchpriority="high" decoding="async" />
                         <div class="hero-badge">
                             <strong>20+</strong>
                             <span>años creando encuentros memorables</span>
@@ -73,7 +76,7 @@
         <section class="section section-intro">
             <div class="container">
                 <div class="intro-panel">
-                    <img src="./src/Logo Aló.png" alt="Logo de Aló Eventos" />
+                    <img src="./src/Logo Aló.png" alt="Logo de Aló Eventos" loading="lazy" decoding="async" />
                     <div>
                         <span class="eyebrow">Somos Aló</span>
                         <h2>Convertimos ideas en experiencias cuidadas de punta a punta.</h2>
@@ -94,7 +97,7 @@
 
                 <div class="services-grid">
                     <article class="service-card">
-                        <img src="./src/Evento corporativo.JPG" alt="Evento corporativo" />
+                        <img src="./src/Evento corporativo.JPG" alt="Evento corporativo" loading="lazy" decoding="async" />
                         <div>
                             <h3>Eventos corporativos</h3>
                             <p>Team building, workshops, lanzamientos, family day, aniversarios, ferias y exposiciones.</p>
@@ -102,7 +105,7 @@
                         </div>
                     </article>
                     <article class="service-card">
-                        <img src="./src/Evento cientifico.JPG" alt="Evento científico" />
+                        <img src="./src/Evento cientifico.JPG" alt="Evento científico" loading="lazy" decoding="async" />
                         <div>
                             <h3>Eventos científicos</h3>
                             <p>Congresos, jornadas, conferencias, simposios, seminarios y mesas redondas.</p>
@@ -110,7 +113,7 @@
                         </div>
                     </article>
                     <article class="service-card">
-                        <img src="./src/img/Vicky_546.JPG" alt="Evento social" />
+                        <img src="./src/img/Vicky_546.JPG" alt="Evento social" loading="lazy" decoding="async" />
                         <div>
                             <h3>Eventos sociales</h3>
                             <p>Bodas, cumpleaños de 15, baby showers y celebraciones diseñadas a medida.</p>
@@ -124,12 +127,12 @@
         <section class="section founder-section" id="acercaDeMi">
             <div class="container">
                 <div class="founder-grid">
-                    <img src="./src/mariana.jpg" alt="Mariana Martinez, fundadora de Aló Eventos" />
+                    <img src="./src/mariana.jpg" alt="Mariana Martinez, fundadora de Aló Eventos" loading="lazy" decoding="async" />
                     <div class="founder-copy">
                         <span class="eyebrow">Acerca de mí</span>
                         <h2>“Cada evento necesita una idea clara y una coordinación impecable.”</h2>
                         <p>
-                            Soy Mariana Martinez, fundadora de Aló. Cuento con formación profesional en organización de eventos y hace más de 20 años reafirmo que soy una apasionada por lo que hago: crear experiencias únicas.
+                            Soy Mariana Martinez, fundadora de Aló. Cuento con formación profesional en organización de eventos y hace más de 20 años reafirmo que soy una apasionada por lo que hago: crear experiencias únicas. Además, soy miembro de AOFREP y AOCA, dos espacios referentes de la industria de eventos y reuniones.
                         </p>
                     </div>
                 </div>
@@ -145,21 +148,21 @@
 
                 <div class="testimonials-grid">
                     <article class="testimonial-card">
-                        <img src="./src/Dra_Alejandra_Belardo.PNG" alt="Dra. Alejandra Belardo" />
+                        <img src="./src/Dra_Alejandra_Belardo.PNG" alt="Dra. Alejandra Belardo" loading="lazy" decoding="async" />
                         <h3>Dra. Alejandra Belardo</h3>
                         <p class="role">Presidente de la AACOG 2024</p>
                         <blockquote>“La organización estuvo impecable, han estado al par nuestro.”</blockquote>
                         <button class="btn btn-alo-outline" data-bs-toggle="modal" data-bs-target="#testimonioModal1">Ver video</button>
                     </article>
                     <article class="testimonial-card">
-                        <img src="./src/Dra_Romina_Vaccalluzo.PNG" alt="Dra. Romina Vaccalluzo" />
+                        <img src="./src/Dra_Romina_Vaccalluzo.PNG" alt="Dra. Romina Vaccalluzo" loading="lazy" decoding="async" />
                         <h3>Dra. Romina Vaccalluzo</h3>
                         <p class="role">Presidente del VIII Congreso Internacional de la AIACH</p>
                         <blockquote>“Fue un exitazo, gracias al equipo de Aló.”</blockquote>
                         <button class="btn btn-alo-outline" data-bs-toggle="modal" data-bs-target="#testimonioModal2">Ver video</button>
                     </article>
                     <article class="testimonial-card">
-                        <img src="./src/Dra_Gabriela_Carro.PNG" alt="Dra. Gabriela Carro" />
+                        <img src="./src/Dra_Gabriela_Carro.PNG" alt="Dra. Gabriela Carro" loading="lazy" decoding="async" />
                         <h3>Dra. Gabriela Carro</h3>
                         <p class="role">Tesorera de la AIACH</p>
                         <blockquote>“Tremenda organización.”</blockquote>
@@ -190,7 +193,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <video id="video1" controls>
+                    <video id="video1" controls preload="metadata">
                         <source src="./src/Testimonio_Alejandra.mp4" type="video/mp4">
                         Tu navegador no soporta el elemento de video.
                     </video>
@@ -207,7 +210,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <video id="video2" controls>
+                    <video id="video2" controls preload="metadata">
                         <source src="./src/Testimonio_Romina.mp4" type="video/mp4" />
                         Tu navegador no soporta el elemento de video.
                     </video>
@@ -224,7 +227,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <video id="video3" controls>
+                    <video id="video3" controls preload="metadata">
                         <source src="./src/Testimonio_Gabriela.mp4" type="video/mp4" />
                         Tu navegador no soporta el elemento de video.
                     </video>
@@ -234,7 +237,7 @@
     </div>
 
     <a href="https://wa.me/5491155893054?text=Hola%2C%20me%20gustaria%20organizar%20un%20evento%20con%20ustedes%21" class="whatsapp-button" target="_blank" aria-label="Contactar por WhatsApp">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" />
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
     <footer>
@@ -248,6 +251,13 @@
                 <li><a href="https://www.linkedin.com/in/mariana-raquel-martinez-56341a116/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
                 <li><a href="https://wa.me/5491155893054?text=Hola%2C%20me%20gustaria%20organizar%20un%20evento%20con%20ustedes%21" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
             </ul>
+            <div class="footer-memberships" aria-label="Membresías profesionales">
+                <span>Miembro de</span>
+                <div>
+                    <img src="./src/img/Logo AOFREP.png" alt="AOFREP - Asociación de Eventos de la Argentina" loading="lazy" decoding="async" />
+                    <img src="./src/img/Logo AOCA.png" alt="AOCA - Nucleamos la industria de reuniones" loading="lazy" decoding="async" />
+                </div>
+            </div>
             <p class="rights">© 2024 All rights reserved. <a href="#">GG Innovations</a>.</p>
         </div>
     </footer>
