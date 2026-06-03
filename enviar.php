@@ -64,4 +64,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = htmlspecialchars($_POST["nombre"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $mensaje = htmlspecialchars($_POST["mensaje"]);
+    
+    // reCAPTCHA
+    $secretKey = "6LefZdQqAAAAABkxKCw8THFbRuw4LJjPigb84XlS";
+    $responseKey = $_POST["g-recaptcha-response"];
+    $userIP = $_SERVER["REMOTE_ADDR"];
+
+    $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
+    $response = file_get_contents($url);
+    $responseKeys = json_decode($response, true);
+
+    if (intval($responseKeys["success"]) !== 1) {
+        echo "Error: Verificación reCAPTCHA fallida. Intenta nuevamente.";
+    } else {
+        // Aquí procesas el formulario (ej. enviar email, guardar en BD, etc.)
+        echo "Formulario enviado con éxito.";
+    }
+}
+
+
 ?>
