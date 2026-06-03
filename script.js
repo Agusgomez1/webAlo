@@ -109,8 +109,12 @@ document.addEventListener("DOMContentLoaded", function () {
 function initLoader() {
   const loader = document.getElementById("loader");
   const content = document.getElementById("content");
+  let loaderHidden = false;
 
-  window.addEventListener("load", function () {
+  function hideLoader() {
+    if (loaderHidden) return;
+    loaderHidden = true;
+
     if (loader) {
       loader.classList.add("loader-container--hidden");
       window.setTimeout(function () {
@@ -121,7 +125,13 @@ function initLoader() {
     if (content) {
       content.style.display = "block";
     }
+  }
+
+  window.requestAnimationFrame(function () {
+    window.setTimeout(hideLoader, 450);
   });
+  window.addEventListener("load", hideLoader, { once: true });
+  window.setTimeout(hideLoader, 2500);
 }
 
 function initNavbar() {
