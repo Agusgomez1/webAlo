@@ -456,6 +456,22 @@ a {
   color: rgba(255, 250, 243, 0.74);
 }
 
+.btn-alo-founder {
+  margin-top: 1.35rem;
+  color: var(--alo-ink);
+  border: 1px solid var(--alo-gold);
+  background: var(--alo-gold);
+  box-shadow: 0 12px 28px rgba(218, 178, 117, 0.18);
+}
+
+.btn-alo-founder:hover,
+.btn-alo-founder:focus {
+  color: var(--alo-ink);
+  border-color: #efcd91;
+  background: #efcd91;
+  transform: translateY(-2px);
+}
+
 .testimonial-card {
   padding: 1.4rem;
   display: flex;
@@ -557,6 +573,152 @@ video {
   height: auto;
   max-height: 78vh;
   background: var(--alo-ink);
+}
+
+.founder-modal .modal-content {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  border-radius: 8px;
+  background: var(--alo-paper);
+  box-shadow: var(--alo-shadow);
+}
+
+.modal-close-floating {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(255, 250, 243, 0.9);
+}
+
+.founder-modal__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 170px;
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  color: var(--alo-cream);
+  background: linear-gradient(135deg, var(--alo-ink), var(--alo-charcoal));
+}
+
+.founder-modal__hero h2 {
+  margin: 0;
+  font-size: clamp(2.15rem, 5vw, 4.3rem);
+  line-height: 0.98;
+  font-weight: 800;
+}
+
+.founder-modal__hero p {
+  max-width: 720px;
+  margin: 1rem 0 0;
+  color: rgba(255, 250, 243, 0.76);
+  font-size: 1.03rem;
+  line-height: 1.65;
+}
+
+.founder-modal__hero img {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border: 6px solid rgba(255, 250, 243, 0.16);
+  border-radius: 50%;
+}
+
+.founder-modal__body {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+.founder-modal__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.founder-modal__cards article {
+  min-height: 100%;
+  padding: 1.15rem;
+  border: 1px solid rgba(24, 21, 22, 0.08);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.founder-modal__cards span,
+.founder-modal__timeline strong {
+  display: block;
+  color: var(--alo-coral);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.founder-modal__cards p {
+  margin: 0.45rem 0 0;
+  color: var(--alo-muted);
+  line-height: 1.55;
+}
+
+.founder-modal__cards a {
+  display: inline-flex;
+  margin-top: 0.35rem;
+  color: var(--alo-ink);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.founder-modal__memberships {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.founder-modal__memberships img {
+  box-sizing: border-box;
+  width: 150px;
+  height: 72px;
+  object-fit: contain;
+  padding: 0.28rem 0.38rem;
+  border: 1px solid rgba(24, 21, 22, 0.08);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.founder-modal__timeline {
+  padding-top: 0.4rem;
+}
+
+.founder-modal__timeline h3 {
+  margin: 0 0 1rem;
+  color: var(--alo-ink);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.founder-modal__timeline ol {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.founder-modal__timeline li {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-top: 1px solid rgba(24, 21, 22, 0.1);
+}
+
+.founder-modal__timeline span {
+  color: var(--alo-muted);
+  line-height: 1.55;
 }
 
 .whatsapp-button {
@@ -736,6 +898,16 @@ footer .rights a {
     grid-template-columns: 1fr;
   }
 
+  .founder-modal__hero,
+  .founder-modal__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-modal__hero img {
+    width: 132px;
+    height: 132px;
+  }
+
   .cta-panel {
     align-items: flex-start;
     flex-direction: column;
@@ -765,11 +937,13 @@ footer .rights a {
 
   .hero-actions,
   .hero-actions .btn,
+  .btn-alo-founder,
   .cta-panel .btn {
     width: 100%;
   }
 
   .hero-actions .btn,
+  .btn-alo-founder,
   .cta-panel .btn {
     justify-content: center;
   }
@@ -795,6 +969,19 @@ footer .rights a {
 
   .intro-panel img {
     width: 150px;
+  }
+
+  .founder-modal__hero {
+    padding-top: 4rem;
+  }
+
+  .founder-modal__memberships {
+    justify-content: center;
+  }
+
+  .founder-modal__timeline li {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
   }
 
   .whatsapp-button {
