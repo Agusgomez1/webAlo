@@ -1,465 +1,586 @@
-/* ---------------------- ESTILOS GENERALES ---------------------- */
+:root {
+  --alo-ink: #181516;
+  --alo-night: #242124;
+  --alo-charcoal: #302c2f;
+  --alo-cream: #f6efe6;
+  --alo-paper: #fffaf3;
+  --alo-gold: #d5b47b;
+  --alo-coral: #c66f62;
+  --alo-muted: #817672;
+  --alo-shadow: 0 24px 70px rgba(20, 16, 16, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(40, 37, 39); /* Cambia este valor al color que prefieras */
-
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: var(--alo-paper);
+  color: var(--alo-ink);
+  overflow-x: hidden;
 }
 
-/* ---------------------- NAVBAR ---------------------- */
-/* Ajuste general del navbar */
-nav.navbar {
-    display: flex;
-    justify-content: space-between; /* Distribuye el logo y los enlaces horizontalmente */
-    align-items: center; /* Centra verticalmente los elementos */
-    background-color: rgb(0, 0, 0);
-    height: 80px; /* Mantén una altura fija para el navbar */
-    padding: 0 2rem; /* Añade un poco de espacio lateral */
-    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+img {
+  max-width: 100%;
 }
 
-.aloImgNavbar {
-    width: 10%; /* Ajusta el tamaño del logo */
-    height: auto;
-}
-
-nav.navbar .container {
-    display: flex;
-    justify-content: space-between; /* Distribuye el logo y el menú en el ancho del navbar */
-    align-items: center;
-    width: 100%;
-}
-
-nav.navbar .navbar-brand {
-    color: white;
-    text-align: center;
-}
-
-nav.navbar img {
-    width: 5rem;
-    height: 5rem;
-}
-
-nav.navbar ul {
-    list-style: none;
-    display: flex; /* Asegura que los elementos del menú estén en línea */
-    padding: 0;
-    margin: 0;
-}
-
-nav.navbar ul li {
-    display: inline-block;
-    margin-right: 2rem; /* Ajusta el espaciado entre los elementos del menú */
-    color: white;
-}
-
-nav.navbar ul li a {
-    text-decoration: none;
-    color: white; /* Color blanco en el estado normal */
-    position: relative;
-    padding-bottom: 2px;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
-}
-
-nav.navbar ul li a:hover,
-nav.navbar ul li a:focus,
-nav.navbar ul li a:active {
-    color: white; /* Mantener el color blanco en hover, focus y active */
-    border-bottom: 2px solid white;
-}
-
-nav.navbar ul li a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.2s ease;
-}
-
-nav.navbar ul li a:hover {
-    color: white; /* Mantiene el color blanco durante el hover */
-}
-
-nav.navbar ul li a:hover::after {
-    transform: scaleX(1);
-}
-
-/* ---------------------- Ajuste del menú hamburguesa para pantallas pequeñas  */
-@media (max-width: 992px) {
-    nav.navbar {
-      flex-direction: column; /* Apila el logo y el menú en pantallas pequeñas */
-      height: auto;
-    }
-  
-    .navbar-collapse {
-      max-height: 0; /* Inicialmente, el menú está colapsado */
-      overflow: hidden; /* Oculta el contenido cuando está colapsado */
-      background-color: rgb(0, 0, 0);
-      transition: max-height 0.5s ease-in-out; /* Transición suave */
-    }
-  
-    .navbar-collapse.show {
-      max-height: 500px; /* Ajusta según el tamaño de tu contenido */
-    }
-  
-    .navbar-nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-  
-    nav.navbar ul li {
-      margin-right: 0;
-      margin-bottom: 1rem;
-    }
-    
-    /* ////////////////// Ajuste general del botón hamburguesa ////////////////// */
-  .navbar-toggler {
-    border: none;
-    background: none;
-    color: transparent;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;  /* Ajusta el tamaño del botón si es necesario */
-    height: 40px;
-  }
-  
-  /* Ajuste de las barras del ícono hamburguesa */
-  .navbar-toggler-icon {
-    display: flex;
-    position: relative;
-    width: 25px;
-    height: 3px; /* Grosor de la barra */
-    background-image: none;
-    background-color: rgb(234, 218, 200); /* Color beige */
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* Las barras superior e inferior */
-  .navbar-toggler-icon::before,
-  .navbar-toggler-icon::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background-color: rgb(234, 218, 200); /* Mismo color */
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* Alinear correctamente las barras superior e inferior */
-  .navbar-toggler-icon::before {
-    top: -9px; /* Ajusta el espaciado de la barra superior */
-  }
-  
-  .navbar-toggler-icon::after {
-    top: 9px; /* Ajusta el espaciado de la barra inferior */
-  }
-  
-  /* Transformación en "X" */
-  .navbar-toggler.active .navbar-toggler-icon {
-    background-color: transparent;
-  }
-  
-  .navbar-toggler.active .navbar-toggler-icon::before {
-    transform: rotate(45deg);
-    top: 0;
-  }
-  
-  .navbar-toggler.active .navbar-toggler-icon::after {
-    transform: rotate(-45deg);
-    top: 0;
-  }
-
-
-
-}
-
-
-/* Estilos del loader */
 .loader-container {
   position: fixed;
+  inset: 0;
   z-index: 9999;
-  width: 100vw;
-  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #ffffff; /* Fondo blanco mientras carga */
+  justify-content: center;
+  background: var(--alo-paper);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.loader-container--hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .spinner {
-  border: 16px solid #f3f3f3;
+  width: 62px;
+  height: 62px;
+  border: 3px solid rgba(213, 180, 123, 0.25);
+  border-top-color: var(--alo-gold);
   border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
+  animation: spin 0.9s linear infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-
-
-
-
-/* ---------------------- section---------------------- */
-
-.section {
-  padding-top: 3rem;
- 
-
-}
-.section h2 {
-  font-size: 3rem;
-  font-style: italic;
-  font-weight: bold;
-  line-height: 1.2;
-  color: white;
+.alo-navbar {
+  min-height: 76px;
+  background: rgba(24, 21, 22, 0.9);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-
-
-
-/* ---------------------- cards ---------------------- */
-
-.card {
-  height: 100%; /* Asegura que todas las cards tengan la misma altura */
-  cursor: pointer;
-  position: relative; /* Permite modificar solo la card en hover */
-  z-index: 0; /* Asegura que las cards tengan un nivel base */
-  transition: transform 0.3s ease-in-out;
-  overflow: hidden; /* Evita que el contenido desbordado afecte otras cards */
-  margin: 0 auto; /* Centra la card */
+.alo-navbar .container {
+  display: flex;
+  align-items: center;
 }
 
-.card-img-top {
-  height: auto; /* Ajusta la altura de la imagen dentro de la card */
-  object-fit: cover; /* Hace que la imagen cubra todo el área de la card, recortando si es necesario */
-  transition: transform 0.3s ease-in-out;
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
 }
 
-.workshop-card:hover {
-  transform: scale(1.05);
+.aloImgNavbar {
+  width: 76px;
+  height: auto;
+  display: block;
 }
- /* Estilos para el cartel de éxito */
- .alert-success {
-  position: fixed;
-  top: 0;
+
+.alo-navbar .navbar-nav {
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.alo-navbar .nav-link {
+  color: rgba(255, 250, 243, 0.82);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  padding: 0.65rem 0.78rem;
+  border-radius: 999px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.alo-navbar .nav-link:hover,
+.alo-navbar .nav-link:focus,
+.alo-navbar .nav-link.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.alo-navbar .nav-cta {
+  background: var(--alo-cream);
+  color: var(--alo-ink);
+}
+
+.navbar-toggler {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  padding: 0;
+}
+
+.navbar-toggler-icon {
+  position: relative;
+  width: 20px;
+  height: 2px;
+  display: inline-block;
+  background: var(--alo-cream);
+  background-image: none;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
   left: 0;
-  width: 100%;
-  padding: 15px;
-  background-color: #28a745; /* Color verde */
-  color: white;
-  text-align: center;
-  font-size: 18px;
-  z-index: 9999; /* Asegura que esté encima de todo */
-  display: none;
+  width: 20px;
+  height: 2px;
+  background: var(--alo-cream);
+  transition: transform 0.2s ease, top 0.2s ease;
 }
 
-/* ---------------------- MODAL WORKSHOPS ---------------------- */
-
-/* Transición suave del modal */
-.modal.fade .modal-dialog {
-    transition: transform 0.5s ease-out;
-  }
-
-  /* Ajustar las imágenes para que se vean completas dentro del modal */
-  .modal-img {
-    width: 100%;
-    height: 400px;
-    object-fit: contain;
-  }
-
-  /* Flechas dentro de un círculo, con estilo de botón */
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-    border-radius: 50%; /* Hace que las flechas estén dentro de un círculo */
-    padding: 10px; /* Espacio alrededor de la flecha */
-    width: 40px;
-    height: 40px;
-    display: flex; /* Flexbox para centrar */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    transition: background-color 0.3s ease; /* Transición suave para hover */
-  }
-
-  /* Ajustar la posición y tamaño de los botones para que solo ocupen el círculo */
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 40px; /* Coincide con el tamaño del círculo */
-    height: 40px; /* Coincide con el tamaño del círculo */
-    top: 50%; /* Centrar verticalmente en el carrusel */
-    transform: translateY(-50%); /* Asegura que el botón esté perfectamente centrado */
-    position: absolute; /* Asegura que el botón esté bien posicionado en el carrusel */
-  }
-
-  /* Eliminar el área adicional de clic fuera del círculo */
-  .carousel-control-prev {
-    left: 10px; /* Ajusta la posición del botón de la izquierda */
-  }
-
-  .carousel-control-next {
-    right: 10px; /* Ajusta la posición del botón de la derecha */
-  }
-
-  /* Cambiar el tamaño de las flechas para que se vean bien en el círculo */
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-size: 50%; /* Asegura que la flecha dentro del botón tenga un buen tamaño */
-  }
-
-  /* Eliminar el foco visual después de hacer clic */
-  .carousel-control-prev:focus,
-  .carousel-control-next:focus {
-    outline: none;
-  }
-
-  /* Efecto hover para hacer las flechas más visibles al pasar el mouse */
-  .carousel-control-prev:hover .carousel-control-prev-icon,
-  .carousel-control-next:hover .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.7); /* Se oscurece un poco más cuando se pasa el mouse */
-  }
-
-/* ---------------------- SCROLLBAR ---------------------- */
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-thumb {
-    background-color: #808080;
-}
-::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-}
-html {
-    scroll-behavior: smooth;
+.navbar-toggler-icon::before {
+  top: -7px;
 }
 
-/**/
-.workshop-section {
-    padding: 50px 0;
-    color: white;
-    margin-top: 90px;
+.navbar-toggler-icon::after {
+  top: 7px;
 }
-.workshop-title {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 2.5rem;
-    font-weight: bold;
+
+.navbar-toggler.active .navbar-toggler-icon {
+  background: transparent;
 }
+
+.navbar-toggler.active .navbar-toggler-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.navbar-toggler.active .navbar-toggler-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+  color: var(--alo-coral);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+}
+
+.page-hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 130px 0 72px;
+  color: var(--alo-cream);
+  background:
+    linear-gradient(120deg, rgba(24, 21, 22, 0.94), rgba(48, 44, 47, 0.45)),
+    url("./src/img/capacitalo/workshop 7/CONGRESOS MARIANA.jpeg") center/cover;
+}
+
+.page-hero__content {
+  max-width: 960px;
+}
+
+.page-hero h1 {
+  margin: 0;
+  font-size: clamp(2.55rem, 6vw, 5.3rem);
+  line-height: 0.98;
+  font-weight: 800;
+}
+
+.page-hero p {
+  max-width: 720px;
+  margin: 1.35rem 0 0;
+  color: rgba(255, 250, 243, 0.78);
+  font-size: 1.14rem;
+  line-height: 1.75;
+}
+
+.training-intro,
+.workshops-section,
+.training-cta {
+  padding: 82px 0;
+}
+
+.training-intro__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: clamp(1.6rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.training-copy h2,
+.section-heading h2,
+.training-cta h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.training-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.training-stats div {
+  padding: 1.2rem;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 14px 38px rgba(24, 21, 22, 0.08);
+}
+
+.training-stats strong {
+  display: block;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+}
+
+.training-stats span {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--alo-muted);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.workshops-section {
+  background: var(--alo-cream);
+}
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 2rem;
+}
+
 .workshop-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
-.workshop-item {
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 250px;
+
+.workshop-card {
+  min-height: 100%;
 }
-.workshop-item img {
-    width: 60px;
-    margin-bottom: 15px;
+
+.workshop-card button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--alo-ink);
+  text-align: left;
+  box-shadow: 0 14px 38px rgba(24, 21, 22, 0.09);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
-.workshop-item h4 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+
+.workshop-card button:hover,
+.workshop-card button:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 52px rgba(24, 21, 22, 0.14);
 }
-.workshop-item p {
-    font-size: 1rem;
-    color: white;
+
+.workshop-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.workshop-card__tag {
+  align-self: flex-start;
+  margin: 1rem 1rem 0;
+  padding: 0.42rem 0.6rem;
+  border-radius: 999px;
+  background: var(--alo-cream);
+  color: var(--alo-coral);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.workshop-card div {
+  padding: 1rem 1rem 1.25rem;
+}
+
+.workshop-card h3 {
+  margin: 0;
+  font-size: 1.18rem;
+  font-weight: 800;
+}
+
+.workshop-card p {
+  margin: 0.75rem 0 0;
+  color: var(--alo-muted);
+  line-height: 1.62;
+}
+
+.btn {
+  border-radius: 999px;
+  font-weight: 800;
+  padding: 0.82rem 1.2rem;
+}
+
+.btn-alo-primary {
+  background: var(--alo-gold);
+  color: var(--alo-ink);
+  border: 1px solid var(--alo-gold);
+}
+
+.btn-alo-primary:hover,
+.btn-alo-primary:focus {
+  background: #efcd91;
+  border-color: #efcd91;
+  color: var(--alo-ink);
+}
+
+.training-cta__panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(1.5rem, 4vw, 4rem);
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--alo-ink), var(--alo-charcoal));
+  color: var(--alo-cream);
+}
+
+.training-cta h2 {
+  max-width: 860px;
+}
+
+.alo-modal .modal-content {
+  overflow: hidden;
+  border: 0;
+  border-radius: 8px;
+  background: var(--alo-paper);
+  box-shadow: var(--alo-shadow);
+}
+
+.modal-close-floating {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(255, 250, 243, 0.92);
+}
+
+.workshop-modal__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  min-height: 620px;
+}
+
+.workshop-modal__media {
+  min-width: 0;
+  background: var(--alo-ink);
+}
+
+.workshop-modal__media .carousel,
+.workshop-modal__media .carousel-inner,
+.workshop-modal__media .carousel-item {
+  height: 100%;
+}
+
+.workshop-modal__media img {
+  width: 100%;
+  height: 620px;
+  object-fit: cover;
+}
+
+.workshop-modal__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.5rem, 4vw, 3.6rem);
+}
+
+.workshop-modal__copy h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.03;
+  font-weight: 800;
+}
+
+.workshop-modal__copy p {
+  margin: 1rem 0 1.4rem;
+  color: var(--alo-muted);
+  line-height: 1.7;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 58px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(24, 21, 22, 0.62);
+  background-size: 48%;
+}
+
+.reveal,
+.workshop-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.is-visible,
+.workshop-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 footer {
-    background-color: rgb(0, 0, 0); /* Fondo negro */
-    padding: 1rem 0; /* Espaciado en el footer */
-    text-align: center; /* Centrar todo el contenido */
-    color: white; /* Texto blanco */
-    width: 100%; /* Ocupa todo el ancho disponible, sin excederse */
-    position: relative; /* Posicionamiento relativo para estar al final del contenido */
-    box-sizing: border-box; /* Incluye padding en el cálculo del tamaño */
-    margin: 0; /* Elimina cualquier margen extra */
+  background: var(--alo-ink);
+  color: var(--alo-cream);
+  padding: 2.2rem 0;
+  text-align: center;
 }
 
 .container-footer {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
 }
 
-footer .logo {
-    display: block;
-    margin: 0 auto 1rem auto; /* Centrar el logo y darle margen inferior */
-    max-width: 150px; /* Ajusta el tamaño del logo */
+footer .aloImgNavbar {
+  margin: 0 auto 1.2rem;
 }
 
 footer ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* Centra los enlaces del menú */
-    gap: 2rem; /* Espacio entre los enlaces */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-footer ul li {
-    display: inline-block;
+footer ul a {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 250, 243, 0.16);
+  border-radius: 50%;
+  color: var(--alo-cream);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-footer ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.1rem; /* Tamaño del texto de los enlaces */
-    transition: color 0.3s ease;
-}
-
-footer ul li a:hover {
-    color: #f5f5dc; /* Color beige en hover */
-}
-
-footer .social-icons {
-    margin: 1rem 0;
-}
-
-footer .social-icons a {
-    text-decoration: none;
-    color: white;
-    margin: 0 10px;
-    font-size: 1.5rem; /* Tamaño de los iconos */
-    display: inline-block;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-footer .social-icons a:hover {
-    color: #f5f5dc; /* Color beige en hover */
-    transform: scale(1.1); /* Efecto de agrandamiento en hover */
+footer ul a:hover,
+footer ul a:focus {
+  background: var(--alo-cream);
+  color: var(--alo-ink);
 }
 
 footer .rights {
-    font-size: 0.9rem;
-    margin-top: 1rem;
+  margin: 1.35rem 0 0;
+  color: rgba(255, 250, 243, 0.58);
+  font-size: 0.92rem;
 }
 
 footer .rights a {
-    color: #f5f5dc; /* Enlace en color beige */
-    text-decoration: none;
+  color: var(--alo-gold);
+  text-decoration: none;
 }
 
-footer .rights a:hover {
-    text-decoration: underline; /* Subrayado en hover para el enlace */
+@media (max-width: 992px) {
+  .alo-navbar .navbar-collapse {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.28s ease;
+  }
+
+  .alo-navbar .navbar-collapse.show {
+    max-height: 520px;
+  }
+
+  .alo-navbar .navbar-nav {
+    align-items: stretch;
+    gap: 0.25rem;
+    padding: 1rem 0 0.75rem;
+  }
+
+  .alo-navbar .nav-link {
+    text-align: center;
+  }
+
+  .training-intro__grid,
+  .workshop-modal__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .training-stats,
+  .workshop-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workshop-modal__media img {
+    height: 420px;
+  }
+
+  .training-cta__panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .aloImgNavbar {
+    width: 64px;
+  }
+
+  .page-hero {
+    min-height: 68vh;
+    padding: 112px 0 54px;
+  }
+
+  .page-hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .training-intro,
+  .workshops-section,
+  .training-cta {
+    padding: 56px 0;
+  }
+
+  .training-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .training-cta__panel .btn {
+    width: 100%;
+  }
 }

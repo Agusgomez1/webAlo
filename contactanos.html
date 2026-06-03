@@ -1,223 +1,137 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aló Eventos</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="shortcut icon" href="src/img/a.png" type="image/x-icon" />
-    <link rel="stylesheet" href="contactanos.css" />
-    <link rel="icon" type="image/png" href="./src/favicon-32x32.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contactá a Aló Eventos para diseñar y organizar tu próximo evento corporativo, científico o social." />
+  <title>Contactanos | Aló Eventos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="src/img/a.png" type="image/x-icon" />
+  <link rel="icon" type="image/png" href="./src/favicon-32x32.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="contactanos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="script.js" defer></script>
+</head>
 
-  <body>
-    <!-- Loader -->
-  <div id="loader" class="loader-container">
+<body>
+  <div id="loader" class="loader-container" aria-hidden="true">
     <div class="spinner"></div>
-</div>
+  </div>
 
-<script>
-    // Oculta el loader y muestra el contenido
-    window.addEventListener('load', function() {
-      var loader = document.getElementById('loader');
-      var content = document.getElementById('content');
-      loader.style.display = 'none';
-      content.style.display = 'block';
-    });
-  </script>
-    <div id="notification" class="notification"></div>
+  <nav class="navbar navbar-expand-lg fixed-top alo-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html#somos-alo" aria-label="Ir al inicio">
+        <img src="./src/img/Letra-alo.png" alt="Aló Eventos" class="aloImgNavbar" />
+      </a>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html#somos-alo">Somos Aló</a></li>
+          <li class="nav-item"><a class="nav-link" href="./index.html#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="./index.html#acercaDeMi">Acerca de mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="./index.html#testimonios">Testimonios</a></li>
+          <li class="nav-item"><a class="nav-link" href="./galeria.html">FotografiAlo</a></li>
+          <li class="nav-item"><a class="nav-link" href="./capacitalo.html">CapacitAlo</a></li>
+          <li class="nav-item"><a class="nav-link nav-cta active" href="./contactanos.html">Contactanos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="contact-hero">
       <div class="container">
-        <!-- Imagen que lleva al top de la página -->
-        <a href="./index.html#somos-alo">
-          <img src="./src/img/Letra-alo.png" alt="Logo" class="aloImgNavbar" />
-        </a>
-
-        <!-- Botón hamburguesa que solo aparece en pantallas pequeñas -->
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Menú desplegable -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html#somos-alo">Somos Aló</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html#customCarousel"
-                >Servicios</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html#acercaDeMi"
-                >Acerca de mí</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html#testimonios"
-                >Testimonios</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./galeria.html">FotografiAlo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./capacitalo.html">CapacitAlo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./contactanos.html">Contactanos</a>
-            </li>
-          </ul>
+        <div class="contact-hero__grid">
+          <div class="contact-hero__copy reveal">
+            <span class="eyebrow">Contactanos</span>
+            <h1>Contanos tu idea. Nosotras la ordenamos y la convertimos en experiencia.</h1>
+            <p>Eventos corporativos, científicos y sociales pensados con estrategia, calidez y producción integral.</p>
+          </div>
+          <div class="contact-card reveal">
+            <span>Respuesta directa</span>
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/5491155893054?text=Hola%2C%20me%20gustaria%20organizar%20un%20evento%20con%20ustedes%21" target="_blank">Escribir ahora</a>
+          </div>
         </div>
       </div>
-    </nav>
+    </section>
 
-    <main>
-      <!-- CONTACTO -->
-      <section class="contact-section">
-          <!-- Parte de la imagen y el texto de contacto -->
-          <div class="background-image">
-              <div class="container">
-                  <h1>Contactanos</h1>
-                  <p>
-                      ¡Conversemos sobre tus ideas y cómo podemos hacerlas realidad!
-                  </p>
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-layout">
+          <aside class="contact-info reveal">
+            <span class="eyebrow">Primer paso</span>
+            <h2>Cuanto más nos cuentes, mejor podemos imaginarlo con vos.</h2>
+            <div class="contact-info__items">
+              <div>
+                <i class="fas fa-phone"></i>
+                <span>Teléfono</span>
+                <a href="tel:+5491155893054">+54 9 11 5589-3054</a>
               </div>
-          </div>
-  
-          <!-- Formulario de contacto -->
-          <div class="form-container">
-              <div class="container clearfix">
-                  <div class="form-left">
-                      <form action="enviar.php" method="POST">
-                          <div class="form-fields">
-                              <div class="form-group half-width">
-                                  <label for="name">Nombre *</label>
-                                  <input type="text" id="name" name="nombre" required />
-                              </div>
-                              <div class="form-group half-width">
-                                  <label for="email">Email *</label>
-                                  <input type="email" id="email" name="email" required />
-                              </div>
-                              <div class="form-group half-width">
-                                  <label for="telefono">Teléfono *</label>
-                                  <input type="tel" id="telefono" name="telefono" required />
-                              </div>
-                          </div>
-                          <div class="form-group full-width message-box">
-                              <label for="message">Mensaje *</label>
-                              <textarea id="message" name="mensaje" rows="7" required></textarea>
-                          </div>
-
-                          
-                          <div class="g-recaptcha captcha mb-3" data-sitekey="6LefZdQqAAAAAMIaLHqD3eLmEC0260XLVRSy_UAv" ></div>
-                          <button type="submit" class="submit-btn">Enviar</button>
-                      </form>
-                  </div>
+              <div>
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+                <a href="https://www.instagram.com/alooficial_/" target="_blank">@alooficial_</a>
               </div>
-          </div>
-      </section>
-  </main>
-  
-  <!-- Script para mostrar ventana emergente en caso de éxito -->
-  <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          const params = new URLSearchParams(window.location.search);
-          if (params.get('status') === 'success') {
-              alert('¡Tu consulta se envió correctamente!');
-          } else if (params.get('status') === 'error') {
-              alert('Hubo un error al enviar tu consulta. Inténtalo de nuevo.');
-          }
-      });
-  </script>
-  
+              <div>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Base</span>
+                <p>Buenos Aires, Argentina</p>
+              </div>
+            </div>
+          </aside>
 
-    <!-- FOOTER -->
-    <footer>
-      <div class="container-footer">
-        <a href="#somos-alo">
-          <img src="./src/img/Letra-alo.png" alt="Logo" class="aloImgNavbar" />
-        </a>
-        <ul>
-          <li>
-            <a
-              href="https://www.facebook.com/alooficial1?locale=es_LA"
-              target="_blank"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/alooficial_/" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/mariana-raquel-martinez-56341a116/"
-              target="_blank"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://wa.me/+5491170631818" target="_blank"
-              ><i class="fab fa-whatsapp"></i
-            ></a>
-          </li>
-        </ul>
-        <p class="rights">
-          © 2024 All rights reserved. <a href="#">GG Innovations</a>.
-        </p>
+          <form class="contact-form reveal" action="enviar.php" method="POST">
+            <div class="form-grid">
+              <label>
+                <span>Nombre *</span>
+                <input type="text" name="nombre" autocomplete="name" required />
+              </label>
+              <label>
+                <span>Email *</span>
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+              <label>
+                <span>Teléfono *</span>
+                <input type="tel" name="telefono" autocomplete="tel" required />
+              </label>
+              <label class="full">
+                <span>Mensaje *</span>
+                <textarea name="mensaje" rows="7" required placeholder="Tipo de evento, fecha estimada, cantidad de invitados y todo lo que ya tengas en mente."></textarea>
+              </label>
+            </div>
+
+            <div class="form-bottom">
+              <div class="g-recaptcha captcha" data-sitekey="6LefZdQqAAAAAMIaLHqD3eLmEC0260XLVRSy_UAv"></div>
+              <button type="submit" class="btn btn-alo-primary">Enviar consulta</button>
+            </div>
+          </form>
+        </div>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <!--////////////// Script para mostrar el modal de éxito o error según el parámetro de la URL /////////////////-->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Detectar si hay un parámetro de éxito o error en la URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const status = urlParams.get("status");
+  <footer>
+    <div class="container-footer">
+      <a href="./index.html#somos-alo" aria-label="Ir al inicio">
+        <img src="./src/img/Letra-alo.png" alt="Aló Eventos" class="aloImgNavbar" />
+      </a>
+      <ul>
+        <li><a href="https://www.facebook.com/alooficial1?locale=es_LA" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://www.instagram.com/alooficial_/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/mariana-raquel-martinez-56341a116/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="https://wa.me/5491155893054?text=Hola%2C%20me%20gustaria%20organizar%20un%20evento%20con%20ustedes%21" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+      </ul>
+      <p class="rights">© 2024 All rights reserved. <a href="#">GG Innovations</a>.</p>
+    </div>
+  </footer>
+</body>
 
-        // Mostrar modal de éxito o error basado en el parámetro
-        if (status === "success") {
-          const successModal = new bootstrap.Modal(
-            document.getElementById("successModal")
-          );
-          successModal.show();
-          removeStatusParam(); // Eliminar el parámetro después de mostrar el modal
-        } else if (status === "error") {
-          const errorModal = new bootstrap.Modal(
-            document.getElementById("errorModal")
-          );
-          errorModal.show();
-          removeStatusParam(); // Eliminar el parámetro después de mostrar el modal
-        }
-
-        // Función para eliminar el parámetro "status" de la URL
-        function removeStatusParam() {
-          const newUrl = window.location.href.split("?")[0]; // Obtiene la URL sin parámetros
-          window.history.pushState({}, document.title, newUrl); // Reemplaza la URL en la barra sin recargar
-        }
-      });
-    </script>
-  </body>
 </html>

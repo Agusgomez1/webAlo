@@ -56,6 +56,12 @@ a {
   justify-content: center;
   align-items: center;
   background: var(--alo-paper);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.loader-container--hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .spinner {
@@ -501,14 +507,43 @@ a {
   max-width: 920px;
 }
 
+.modal-backdrop.show {
+  opacity: 0.72;
+}
+
+.modal.fade .modal-dialog {
+  transform: translateY(22px) scale(0.97);
+  transition: transform 0.28s ease, opacity 0.28s ease;
+}
+
+.modal.show .modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
 .modal-content {
+  overflow: hidden;
   border: 0;
   border-radius: 8px;
-  overflow: hidden;
+  background: var(--alo-paper);
+  box-shadow: var(--alo-shadow);
+}
+
+.modal-header {
+  padding: 1rem 1.1rem;
+  border: 0;
+  background: var(--alo-paper);
 }
 
 .modal h6 {
   color: var(--alo-ink);
+  font-size: 1rem;
+}
+
+.modal .btn-close {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(24, 21, 22, 0.08);
 }
 
 .modal-body {
@@ -520,7 +555,8 @@ video {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 76vh;
+  max-height: 78vh;
+  background: var(--alo-ink);
 }
 
 .whatsapp-button {
@@ -602,6 +638,21 @@ footer .rights {
 footer .rights a {
   color: var(--alo-gold);
   text-decoration: none;
+}
+
+.reveal,
+.service-card,
+.testimonial-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.is-visible,
+.service-card.is-visible,
+.testimonial-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 992px) {
