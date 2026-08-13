@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Conocé los formatos de eventos científicos, sociales, corporativos y artísticos de Aló Eventos." />
+  <title>Eventos | Aló Eventos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="src/img/a.png" type="image/x-icon" />
+  <link rel="icon" type="image/png" href="./src/favicon-32x32.png" />
+  <link rel="preload" as="image" href="./src/Evento cientifico.JPG" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="eventos.css" />
+  <link rel="stylesheet" href="brand-accents.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SQMQZZSDYV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-SQMQZZSDYV');
+  </script>
+</head>
+
+<body id="eventos">
+  <div id="loader" class="loader-container" aria-hidden="true">
+    <div class="spinner"></div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg fixed-top alo-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html#somos-alo" aria-label="Ir al inicio">
+        <img src="./src/img/Letra-alo.png" alt="Aló Eventos" class="aloImgNavbar" />
+      </a>
+
+      <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html#somos-alo">Somos Aló</a></li>
+          <li class="nav-item"><a class="nav-link" href="./index.html#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link active" href="./eventos.html">Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="./index.html#acercaDeMi">Acerca de mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="./index.html#testimonios">Testimonios</a></li>
+          <li class="nav-item"><a class="nav-link" href="./galeria.html">FotografiAlo</a></li>
+          <li class="nav-item"><a class="nav-link" href="./capacitalo.html">CapacitAlo</a></li>
+          <li class="nav-item"><a class="nav-link nav-cta" href="./contactanos.html">Contactanos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="events-hero">
+      <div class="container">
+        <div class="events-hero__content reveal">
+          <span class="eyebrow">Formatos de eventos</span>
+          <h1>Cada encuentro pide una forma propia de hacerse realidad.</h1>
+          <p>Diseñamos y producimos eventos científicos, sociales, corporativos y artísticos con una mirada
+            profesional y cuidada en cada etapa.</p>
+          <div class="brand-stickers" aria-label="Hashtags institucionales">
+            <span>#somosaló</span>
+            <span>#alóeventos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section event-formats-section" aria-labelledby="event-formats-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Cuatro formatos</span>
+          <h2 id="event-formats-title">Experiencias pensadas para cada objetivo.</h2>
+        </div>
+
+        <div class="event-formats-grid">
+          <article class="event-format-card reveal">
+            <img src="./src/Evento cientifico.JPG" alt="Evento científico organizado por Aló" loading="lazy"
+              decoding="async" />
+            <div>
+              <h3>Eventos científicos</h3>
+              <ul>
+                <li>Congresos</li>
+                <li>Jornadas</li>
+                <li>Conferencias</li>
+                <li>Simposios</li>
+                <li>Seminarios</li>
+                <li>Mesas redondas</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="event-format-card reveal">
+            <img src="./src/Evento social.JPG" alt="Evento social organizado por Aló" loading="lazy"
+              decoding="async" />
+            <div>
+              <h3>Eventos sociales</h3>
+              <ul>
+                <li>Bodas</li>
+                <li>Cumpleaños de 15</li>
+                <li>Baby showers</li>
+                <li>Celebraciones diseñadas a medida</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="event-format-card reveal">
+            <img src="./src/Evento corporativo.jpg" alt="Evento corporativo organizado por Aló" loading="lazy"
+              decoding="async" />
+            <div>
+              <h3>Eventos corporativos</h3>
+              <ul>
+                <li>Team building</li>
+                <li>Workshops</li>
+                <li>Lanzamientos</li>
+                <li>Family day</li>
+                <li>Aniversarios</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="event-format-card reveal">
+            <!-- Pendiente: reemplazar este placeholder por una imagen de evento artístico cuando el archivo esté disponible en src/. -->
+            <div class="event-format-card__placeholder" role="img"
+              aria-label="Imagen de evento artístico pendiente de carga">
+              <i class="far fa-image" aria-hidden="true"></i>
+              <span>Imagen de evento artístico pendiente</span>
+            </div>
+            <div>
+              <h3>Eventos artísticos</h3>
+              <ul>
+                <li>Producciones integrales</li>
+                <li>Puesta en escena</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section events-cta">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <span class="eyebrow">Hablemos</span>
+            <h2>Contanos qué estás imaginando y empecemos a darle forma.</h2>
+          </div>
+          <div class="events-cta__actions">
+            <a href="./contactanos.html" class="btn btn-alo-primary">Contactar a Aló</a>
+            <a href="https://wa.me/5491155893054?text=Hola%2C%20me%20gustaria%20organizar%20un%20evento%20con%20ustedes%21"
+              class="btn btn-alo-ghost" target="_blank" rel="noopener" onclick="gtag('event', 'click_whatsapp', {
+                event_category: 'contacto',
+                event_label: 'WhatsApp página Eventos'
+              });">Escribir por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container-footer">
+      <a href="./index.html#somos-alo" aria-label="Ir al inicio">
+        <img src="./src/img/Letra-alo.png" alt="Aló Eventos" class="aloImgNavbar" />
+      </a>
+      <ul>
+        <li><a href="https://www.facebook.com/alooficial1?locale=es_LA" target="_blank" rel="noopener"
+            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://www.instagram.com/alooficial_/" target="_blank" rel="noopener" aria-label="Instagram"
+            onclick="gtag('event', 'click_instagram', { event_category: 'redes', event_label: 'Instagram footer' });"><i
+              class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/mariana-raquel-martinez-56341a116/" target="_blank" rel="noopener"
+            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a
+            href="https://wa.me/5491155893054?text=Hola%2C%20me%20gustaria%20organizar%20un%20evento%20con%20ustedes%21"
+            target="_blank" rel="noopener" aria-label="WhatsApp" onclick="gtag('event', 'click_whatsapp', {
+              event_category: 'contacto',
+              event_label: 'WhatsApp footer'
+            });"><i class="fab fa-whatsapp"></i></a></li>
+      </ul>
+      <div class="footer-memberships" aria-label="Membresías profesionales">
+        <span>Miembro de</span>
+        <div>
+          <img src="./src/img/Logo AOFREP transparent.png" alt="AOFREP - Asociación de Eventos de la Argentina"
+            loading="lazy" decoding="async" />
+          <img src="./src/img/Logo AOCA transparent.png" alt="AOCA - Nucleamos la industria de reuniones"
+            loading="lazy" decoding="async" />
+        </div>
+      </div>
+      <p class="rights">© 2024 All rights reserved. <a href="#">GG Innovations</a>.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Aló Eventos diseña, organiza y coordina eventos corporativos, científicos y sociales con más de 20 años de experiencia." />
-    <title>Aló Eventos | Organización integral de eventos</title>
+        content="Aló Eventos diseña, organiza y coordina eventos corporativos, científicos, sociales y artísticos con más de 20 años de experiencia." />
+    <title>Aló Eventos | Organización profesional de eventos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="src/img/a.png" type="image/x-icon" />
     <link rel="icon" type="image/png" href="./src/favicon-32x32.png">
@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="brand-accents.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="script.js" defer></script>
     <!-- Google tag (gtag.js) -->
@@ -48,6 +49,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#somos-alo">Somos Aló</a></li>
                     <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./eventos.html">Eventos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#acercaDeMi">Acerca de mí</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
                     <li class="nav-item"><a class="nav-link" href="./galeria.html">FotografiAlo</a></li>
@@ -63,11 +65,11 @@
             <div class="container">
                 <div class="alo-hero__grid">
                     <div class="alo-hero__copy">
-                        <span class="eyebrow">Organización integral de eventos</span>
+                        <span class="eyebrow">Organización profesional de eventos</span>
                         <h1>Diseñamos experiencias que se viven antes, durante y después del evento.</h1>
                         <p>
-                            Planificamos, coordinamos y producimos eventos corporativos, científicos y sociales con una
-                            mirada cercana, creativa y profesional.
+                            Planificamos, coordinamos y producimos eventos corporativos, científicos, sociales y
+                            artísticos con una mirada cercana, creativa y profesional.
                         </p>
                         <div class="hero-actions">
                             <a href="./contactanos.html" class="btn btn-alo-primary">Planear mi evento</a>
@@ -89,14 +91,22 @@
         <section class="section section-intro">
             <div class="container">
                 <div class="intro-panel">
-                    <img src="./src/Logo Aló.png" alt="Logo de Aló Eventos" loading="lazy" decoding="async" />
+                    <!-- Pendiente: reemplazar este bloque por la foto del florero y el banner de Aló cuando el archivo esté disponible en src/. -->
+                    <div class="intro-panel__placeholder" role="img"
+                        aria-label="Foto del florero y el banner de Aló pendiente de carga">
+                        <i class="far fa-image" aria-hidden="true"></i>
+                        <span>Imagen Somos Aló pendiente</span>
+                    </div>
                     <div>
                         <span class="eyebrow">Somos Aló</span>
                         <h2>Convertimos ideas en experiencias cuidadas de punta a punta.</h2>
                         <p>
                             Te acompañamos desde el primer boceto hasta el cierre del evento: concepto, proveedores,
-                            producción, coordinación y detalles que hacen que todo fluya.
+                            producción, coordinación y detalles que marcan la diferencia.
                         </p>
+                        <div class="brand-stickers" aria-label="Hashtags institucionales">
+                            <span>#somosaló</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,36 +116,52 @@
             <div class="container">
                 <div class="section-heading">
                     <span class="eyebrow">Servicios</span>
-                    <h2>Un equipo para cada tipo de celebración, encuentro o lanzamiento.</h2>
+                    <h2>Servicios transversales para una organización profesional de punta a punta.</h2>
                 </div>
 
-                <div class="services-grid">
-                    <article class="service-card">
-                        <img src="./src/Evento corporativo.JPG" alt="Evento corporativo" loading="lazy"
-                            decoding="async" />
-                        <div>
-                            <h3>Eventos corporativos</h3>
-                            <p>Team building, workshops, lanzamientos, family day, aniversarios, ferias y exposiciones.
-                            </p>
-                            <a href="./contactanos.html">Quiero saber más</a>
-                        </div>
+                <ul class="services-list">
+                    <li>Producción integral</li>
+                    <li>Dirección</li>
+                    <li>Coordinación</li>
+                    <li>Comercialización</li>
+                    <li>Asesoramiento</li>
+                    <li>Servicio de acreditación</li>
+                    <li>Recursos humanos</li>
+                    <li>Técnico y audiovisual</li>
+                    <li>Logística y montaje de stands</li>
+                    <li>Protocolo y ceremonial</li>
+                    <li>Ambientación</li>
+                    <li>Transporte aéreo y terrestre</li>
+                    <li>Hospedaje</li>
+                    <li>Catering</li>
+                    <li>Sostenibilidad y legado</li>
+                    <li>Entre otros</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section identity-section" aria-labelledby="identity-title">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Identidad Aló</span>
+                    <h2 id="identity-title">Los 3 atributos de identidad corporativa</h2>
+                </div>
+                <div class="identity-grid">
+                    <article class="identity-card reveal">
+                        <h3>p<span>A</span>sión</h3>
+                        <p>Define nuestra personalidad, la entrega, dedicación y compromiso, generando confianza y
+                            seguridad en los clientes.</p>
                     </article>
-                    <article class="service-card">
-                        <img src="./src/Evento cientifico.JPG" alt="Evento científico" loading="lazy"
-                            decoding="async" />
-                        <div>
-                            <h3>Eventos científicos</h3>
-                            <p>Congresos, jornadas, conferencias, simposios, seminarios y mesas redondas.</p>
-                            <a href="./contactanos.html">Quiero saber más</a>
-                        </div>
+                    <article class="identity-card reveal">
+                        <h3><span>L</span>iderazgo</h3>
+                        <p>Más de 20 años de trayectoria conduciendo equipos, proveedores y tiempos con seguridad,
+                            experiencia y visión estratégica antes, durante y después del evento.</p>
                     </article>
-                    <article class="service-card">
-                        <img src="./src/img/Vicky_546.JPG" alt="Evento social" loading="lazy" decoding="async" />
-                        <div>
-                            <h3>Eventos sociales</h3>
-                            <p>Bodas, cumpleaños de 15, baby showers y celebraciones diseñadas a medida.</p>
-                            <a href="./contactanos.html">Quiero saber más</a>
-                        </div>
+                    <article class="identity-card reveal">
+                        <h3>ambici<span>Ó</span>n</h3>
+                        <p>Es nuestro motor estratégico y la responsabilidad de no conformarse con lo convencional,
+                            aspirando siempre a superar las expectativas del cliente y redefinir los estándares del
+                            sector en la búsqueda de la excelencia.</p>
                     </article>
                 </div>
             </div>
@@ -147,19 +173,48 @@
                     <img src="./src/mariana.jpg" alt="Mariana Martinez, fundadora de Aló Eventos" loading="lazy"
                         decoding="async" />
                     <div class="founder-copy">
-                        <span class="eyebrow">Acerca de mí</span>
-                        <h2>“Cada evento necesita una idea clara y una coordinación impecable.”</h2>
+                        <span class="eyebrow">Directora y Fundadora</span>
+                        <h2>Mariana R. Martínez</h2>
                         <p>
-                            Soy Mariana Martinez, fundadora de Aló. Cuento con formación profesional en organización de
-                            eventos y hace más de 20 años reafirmo que soy una apasionada por lo que hago: crear
-                            experiencias únicas. Además, soy miembro de AOFREP y AOCA, dos espacios referentes de la
-                            industria de eventos y reuniones.
+                            Mariana R. Martínez, Directora y Fundadora de Aló. Técnica Superior en Organización
+                            Profesional de Eventos recibida en COE. Diplomada en Turismo de Reuniones AOCA - Universidad
+                            Blas Pascal. Miembro de AOCA y AOFREP, dos instituciones referentes de la industria MICE.
                         </p>
+                        <blockquote class="founder-quote">“Hace más de 20 años que reafirmo que soy una apasionada por
+                            lo que hago: crear experiencias únicas.”</blockquote>
                         <button class="btn btn-alo-founder" type="button" data-bs-toggle="modal"
                             data-bs-target="#marianaInfoModal">
                             Más información
                         </button>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section featured-events-section" aria-labelledby="featured-events-title">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Experiencia y trayectoria</span>
+                    <h2 id="featured-events-title">Eventos destacados</h2>
+                </div>
+                <ol class="featured-events-list">
+                    <li><strong>2025, 2024, 2023, 2022, 2021</strong><span>Congresos de la Asociación
+                            Interdisciplinaria Argentina para la Cicatrización de Heridas AIACH.</span></li>
+                    <li><strong>2025, 2024</strong><span>Congreso Argentino e Internacional de Controversias en
+                            Obstetricia y Ginecología.</span></li>
+                    <li><strong>2022</strong><span>Organización Jornadas Argentinas de Nutrición.</span></li>
+                    <li><strong>2021</strong><span>Comercialización XXI Congreso Argentino de Nutrición.</span></li>
+                    <li><strong>2018</strong><span>Evento solidario a beneficio de la Fundación PowerChair Football
+                            Argentina.</span></li>
+                    <li><strong>2017</strong><span>The 4th Latin America Congress on Controversies to Consensus in
+                            Diabetes, Obesity and Hypertension CODHyArgentina.</span></li>
+                    <li><strong>2017</strong><span>Coordinación IUNS 21th International Congress of Nutrition.</span>
+                    </li>
+                    <li><strong>1997</strong><span>Organizadora de Congresos / Jornadas en Sociedad Argentina de
+                            Diabetes desde 1997 a la fecha.</span></li>
+                </ol>
+                <div class="brand-stickers brand-stickers--end" aria-label="Hashtags institucionales">
+                    <span>#alóeventos</span>
                 </div>
             </div>
         </section>
@@ -208,7 +263,7 @@
                 <div class="cta-panel">
                     <div>
                         <span class="eyebrow">Hablemos</span>
-                        <h2>Contanos qué estás imaginando. Nosotras lo ordenamos, lo producimos y lo hacemos posible.
+                        <h2>Contanos qué estás imaginando. En Aló lo analizamos, lo producimos y lo hacemos posible.
                         </h2>
                     </div>
                     <a href="./contactanos.html" class="btn btn-alo-primary">Contactar a Aló</a>
@@ -281,7 +336,7 @@
                     <div>
                         <span class="eyebrow">Experiencia y trayectoria</span>
                         <h2 id="marianaInfoModalLabel">Mariana R. Martínez</h2>
-                        <p>Founder and CEO de Aló Eventos. Organizadora Profesional de Eventos, especializada en
+                        <p>Directora y Fundadora de Aló Eventos. Organizadora Profesional de Eventos, especializada en
                             congresos, jornadas, reuniones científicas y experiencias institucionales.</p>
                     </div>
                     <img src="./src/mariana.jpg" alt="Mariana R. Martínez" loading="lazy" decoding="async" />
@@ -295,8 +350,7 @@
                         </article>
                         <article>
                             <span>Especialización</span>
-                            <p>Cursando la Diplomatura en Industria del Turismo de Reuniones en Universidad Blas Pascal
-                                - AOCA.</p>
+                            <p>Diplomada en Turismo de Reuniones AOCA - Universidad Blas Pascal.</p>
                         </article>
                         <article>
                             <span>Membresías</span>

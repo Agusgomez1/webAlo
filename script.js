@@ -3,7 +3,6 @@ const aloGalleryImages = [
   { category: "eventos", src: "./src/img/Vicky_1504.JPG", alt: "Ambientación de evento social" },
   { category: "eventos", src: "./src/img/Vicky_542.JPG", alt: "Celebración social" },
   { category: "eventos", src: "./src/img/fotografialo/eventos_sociales/Vicky_230.JPG", alt: "Detalle de evento social" },
-  { category: "congresos", src: "./src/img/2013-08-21_17.42.04.jpg", alt: "Congreso organizado por Aló" },
   { category: "workshops", src: "./src/img/PHOTO-2024-05-11-17-25-16_1.jpg", alt: "Workshop de Aló" },
   { category: "workshops", src: "./src/img/fotografialo/workshops/DSC_0262.JPG", alt: "Workshop en acción" },
   { category: "workshops", src: "./src/img/fotografialo/workshops/DSC_0283.JPG", alt: "Participantes en workshop" },
@@ -13,7 +12,6 @@ const aloGalleryImages = [
   { category: "workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.08.49_f1f03dd2.jpg", alt: "Encuentro de capacitación" },
   { category: "workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.09.41_fb4b729b.jpg", alt: "Material de workshop" },
   { category: "workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.10.09_9b6113c7.jpg", alt: "Clase de capacitación" },
-  { category: "workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.11.54_ffed8e5d.jpg", alt: "Workshop para organizadores" },
   { category: "workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.11.55_51c3507c.jpg", alt: "Experiencia de workshop" },
   { category: "workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.15.11_33fb65a0.jpg", alt: "Cierre de workshop" },
 ];
@@ -240,6 +238,11 @@ function initGallery() {
     const images = selected === "all" ? aloGalleryImages : aloGalleryImages.filter(function (image) {
       return image.category === selected;
     });
+
+    if (images.length === 0) {
+      galleryGrid.innerHTML = '<p class="gallery-empty" role="status">No hay imágenes disponibles en esta categoría por el momento.</p>';
+      return;
+    }
 
     galleryGrid.innerHTML = images
       .map(function (image, index) {

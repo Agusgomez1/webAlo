@@ -196,8 +196,7 @@ img {
 
 .contact-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 260px;
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr);
   align-items: end;
 }
 
