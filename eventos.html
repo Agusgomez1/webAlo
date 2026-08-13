@@ -51,9 +51,9 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="./index.html#somos-alo">Somos Aló</a></li>
           <li class="nav-item"><a class="nav-link" href="./index.html#servicios">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link active" href="./eventos.html">Eventos</a></li>
           <li class="nav-item"><a class="nav-link" href="./index.html#acercaDeMi">Acerca de mí</a></li>
           <li class="nav-item"><a class="nav-link" href="./index.html#testimonios">Testimonios</a></li>
+          <li class="nav-item"><a class="nav-link active" href="./eventos.html">Eventos</a></li>
           <li class="nav-item"><a class="nav-link" href="./galeria.html">FotografiAlo</a></li>
           <li class="nav-item"><a class="nav-link" href="./capacitalo.html">CapacitAlo</a></li>
           <li class="nav-item"><a class="nav-link nav-cta" href="./contactanos.html">Contactanos</a></li>
@@ -132,12 +132,8 @@
           </article>
 
           <article class="event-format-card reveal">
-            <!-- Pendiente: reemplazar este placeholder por una imagen de evento artístico cuando el archivo esté disponible en src/. -->
-            <div class="event-format-card__placeholder" role="img"
-              aria-label="Imagen de evento artístico pendiente de carga">
-              <i class="far fa-image" aria-hidden="true"></i>
-              <span>Imagen de evento artístico pendiente</span>
-            </div>
+            <img src="./src/img/eventos/foto-eventos-artisticos.jpg"
+              alt="Evento artístico organizado por Aló Eventos" loading="lazy" decoding="async" />
             <div>
               <h3>Eventos artísticos</h3>
               <ul>
@@ -169,6 +165,14 @@
       </div>
     </section>
   </main>
+
+  <a href="https://wa.me/5491155893054?text=Hola%2C%20me%20gustaria%20organizar%20un%20evento%20con%20ustedes%21"
+    class="whatsapp-button" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" onclick="gtag('event', 'click_whatsapp', {
+      event_category: 'contacto',
+      event_label: 'Botón flotante WhatsApp'
+    });">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
 
   <footer>
     <div class="container-footer">

@@ -337,7 +337,7 @@ a {
 
 .intro-panel {
   display: grid;
-  grid-template-columns: 210px minmax(0, 1fr);
+  grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1fr);
   gap: clamp(1.5rem, 4vw, 4rem);
   align-items: center;
   padding: clamp(1.5rem, 4vw, 4rem);
@@ -348,7 +348,10 @@ a {
 }
 
 .intro-panel img {
-  width: 190px;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 8px;
   justify-self: center;
 }
 
@@ -1159,7 +1162,7 @@ footer .rights a {
   }
 
   .intro-panel img {
-    width: 150px;
+    width: 100%;
   }
 
   .founder-modal__hero {

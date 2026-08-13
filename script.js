@@ -1,19 +1,38 @@
 const aloGalleryImages = [
-  { category: "eventos", src: "./src/img/Vicky_1292.JPG", alt: "Evento social de Aló" },
-  { category: "eventos", src: "./src/img/Vicky_1504.JPG", alt: "Ambientación de evento social" },
-  { category: "eventos", src: "./src/img/Vicky_542.JPG", alt: "Celebración social" },
-  { category: "eventos", src: "./src/img/fotografialo/eventos_sociales/Vicky_230.JPG", alt: "Detalle de evento social" },
-  { category: "workshops", src: "./src/img/PHOTO-2024-05-11-17-25-16_1.jpg", alt: "Workshop de Aló" },
-  { category: "workshops", src: "./src/img/fotografialo/workshops/DSC_0262.JPG", alt: "Workshop en acción" },
-  { category: "workshops", src: "./src/img/fotografialo/workshops/DSC_0283.JPG", alt: "Participantes en workshop" },
-  { category: "workshops", src: "./src/img/fotografialo/workshops/DSC_0404.JPG", alt: "Detalle de workshop" },
-  { category: "workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-09 at 22.17.03 (1).jpeg", alt: "Capacitación de eventos" },
-  { category: "workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-09 at 22.17.03.jpeg", alt: "Workshop presencial" },
-  { category: "workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.08.49_f1f03dd2.jpg", alt: "Encuentro de capacitación" },
-  { category: "workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.09.41_fb4b729b.jpg", alt: "Material de workshop" },
-  { category: "workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.10.09_9b6113c7.jpg", alt: "Clase de capacitación" },
-  { category: "workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.11.55_51c3507c.jpg", alt: "Experiencia de workshop" },
-  { category: "workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.15.11_33fb65a0.jpg", alt: "Cierre de workshop" },
+  { category: "eventos_sociales", label: "Sociales", src: "./src/img/fotografialo/eventos_sociales/foto-evento-benefico-01.jpg", alt: "Evento social benéfico organizado por Aló Eventos" },
+  { category: "eventos_sociales", label: "Sociales", src: "./src/img/fotografialo/eventos_sociales/foto-evento-benefico-02.jpg", alt: "Encuentro social benéfico organizado por Aló Eventos" },
+  { category: "eventos_sociales", label: "Sociales", src: "./src/img/fotografialo/eventos_sociales/foto-evento-benefico-03.jpg", alt: "Celebración benéfica organizada por Aló Eventos" },
+  { category: "eventos_sociales", label: "Sociales", src: "./src/img/fotografialo/eventos_sociales/foto-evento-benefico-04.jpg", alt: "Evento benéfico producido por Aló Eventos" },
+  { category: "eventos_sociales", label: "Sociales", src: "./src/img/fotografialo/eventos_sociales/foto-eventos-sociales-01.jpg", alt: "Evento social organizado por Aló Eventos" },
+  { category: "eventos_sociales", label: "Sociales", src: "./src/img/fotografialo/eventos_sociales/Vicky_230.JPG", alt: "Detalle de evento social organizado por Aló Eventos" },
+  { category: "workshops", label: "Workshops", src: "./src/img/fotografialo/workshops/DSC_0262.JPG", alt: "Workshop organizado por Aló Eventos" },
+  { category: "workshops", label: "Workshops", src: "./src/img/fotografialo/workshops/DSC_0283.JPG", alt: "Participantes de un workshop de Aló Eventos" },
+  { category: "workshops", label: "Workshops", src: "./src/img/fotografialo/workshops/DSC_0404.JPG", alt: "Actividad en un workshop de Aló Eventos" },
+  { category: "workshops", label: "Workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-09 at 22.17.03 (1).jpeg", alt: "Capacitación organizada por Aló Eventos" },
+  { category: "workshops", label: "Workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-09 at 22.17.03.jpeg", alt: "Workshop presencial de Aló Eventos" },
+  { category: "workshops", label: "Workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.08.49_f1f03dd2.jpg", alt: "Encuentro de capacitación de Aló Eventos" },
+  { category: "workshops", label: "Workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.09.41_fb4b729b.jpg", alt: "Jornada de workshop organizada por Aló Eventos" },
+  { category: "workshops", label: "Workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.10.09_9b6113c7.jpg", alt: "Clase de capacitación de Aló Eventos" },
+  { category: "workshops", label: "Workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.11.55_51c3507c.jpg", alt: "Experiencia de workshop de Aló Eventos" },
+  { category: "workshops", label: "Workshops", src: "./src/img/fotografialo/workshops/WhatsApp Image 2024-09-15 at 20.15.11_33fb65a0.jpg", alt: "Cierre de workshop de Aló Eventos" },
+  { category: "congresos", label: "Congresos", src: "./src/img/fotografialo/congresos/foto-congresos-01.jpg", alt: "Congreso organizado por Aló Eventos" },
+  { category: "congresos", label: "Congresos", src: "./src/img/fotografialo/congresos/foto-congresos-02.jpg", alt: "Jornada de congreso organizada por Aló Eventos" },
+  { category: "congresos", label: "Congresos", src: "./src/img/fotografialo/congresos/foto-congresos-03.jpg", alt: "Auditorio de congreso organizado por Aló Eventos" },
+  { category: "congresos", label: "Congresos", src: "./src/img/fotografialo/congresos/foto-congresos-04.jpg", alt: "Actividad de congreso organizada por Aló Eventos" },
+  { category: "congresos", label: "Congresos", src: "./src/img/fotografialo/congresos/foto-congresos-05.jpg", alt: "Encuentro científico organizado por Aló Eventos" },
+  { category: "congresos", label: "Congresos", src: "./src/img/fotografialo/congresos/foto-congresos-06.jpg", alt: "Producción de congreso de Aló Eventos" },
+  { category: "congresos", label: "Congresos", src: "./src/img/fotografialo/congresos/foto-congresos-07.jpg", alt: "Congreso profesional organizado por Aló Eventos" },
+  { category: "congresos", label: "Congresos", src: "./src/img/fotografialo/congresos/foto-congresos-08.jpg", alt: "Asistentes de congreso organizado por Aló Eventos" },
+  { category: "congresos", label: "Congresos", src: "./src/img/fotografialo/congresos/foto-congresos-09.jpg", alt: "Escenario de congreso organizado por Aló Eventos" },
+  { category: "congresos", label: "Congresos", src: "./src/img/fotografialo/congresos/foto-congresos-10.jpg", alt: "Acreditación de congreso organizada por Aló Eventos" },
+  { category: "congresos", label: "Congresos", src: "./src/img/fotografialo/congresos/foto-congresos-11.jpg", alt: "Conferencia organizada por Aló Eventos" },
+  { category: "congresos", label: "Congresos", src: "./src/img/fotografialo/congresos/foto-congresos-12.jpg", alt: "Reunión científica organizada por Aló Eventos" },
+  { category: "congresos", label: "Congresos", src: "./src/img/fotografialo/congresos/foto-congresos-13.jpg", alt: "Producción científica de Aló Eventos" },
+  { category: "artisticos", label: "Artísticos", src: "./src/img/fotografialo/artisticos/foto-eventos-artisticos-01.jpg", alt: "Evento artístico organizado por Aló Eventos" },
+  { category: "artisticos", label: "Artísticos", src: "./src/img/fotografialo/artisticos/foto-eventos-artisticos-02.jpg", alt: "Puesta en escena producida por Aló Eventos" },
+  { category: "artisticos", label: "Artísticos", src: "./src/img/fotografialo/artisticos/foto-eventos-artisticos-03.jpg", alt: "Producción artística de Aló Eventos" },
+  { category: "artisticos", label: "Artísticos", src: "./src/img/fotografialo/artisticos/foto-eventos-artisticos-04.jpg", alt: "Espectáculo artístico organizado por Aló Eventos" },
+  { category: "artisticos", label: "Artísticos", src: "./src/img/fotografialo/artisticos/foto-eventos-artisticos-05.jpg", alt: "Experiencia artística producida por Aló Eventos" },
 ];
 
 const aloWorkshops = [
@@ -249,7 +268,7 @@ function initGallery() {
         return `
           <button class="gallery-item reveal" type="button" data-lightbox-src="${image.src}" data-lightbox-alt="${image.alt}" style="transition-delay:${Math.min(index * 35, 280)}ms">
             <img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async" />
-            <span>${getCategoryLabel(image.category)}</span>
+            <span>${image.label || getCategoryLabel(image.category)}</span>
           </button>
         `;
       })
@@ -435,6 +454,7 @@ function getCategoryLabel(category) {
     eventos_sociales: "Sociales",
     workshops: "Workshops",
     congresos: "Congresos",
+    artisticos: "Artísticos",
   };
 
   return labels[category] || category;

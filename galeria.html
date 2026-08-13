@@ -38,9 +38,9 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html#somos-alo">Somos Aló</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#servicios">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="./eventos.html">Eventos</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#acercaDeMi">Acerca de mí</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#testimonios">Testimonios</a></li>
+          <li class="nav-item"><a class="nav-link" href="./eventos.html">Eventos</a></li>
           <li class="nav-item"><a class="nav-link active" href="./galeria.html">FotografiAlo</a></li>
           <li class="nav-item"><a class="nav-link" href="./capacitalo.html">CapacitAlo</a></li>
           <li class="nav-item"><a class="nav-link nav-cta" href="./contactanos.html">Contactanos</a></li>
@@ -72,9 +72,10 @@
           </div>
           <div class="gallery-filter" aria-label="Filtrar galería">
             <button class="filter-btn active" type="button" data-filter="all">Todas</button>
-            <button class="filter-btn" type="button" data-filter="eventos">Sociales</button>
+            <button class="filter-btn" type="button" data-filter="eventos_sociales">Sociales</button>
             <button class="filter-btn" type="button" data-filter="workshops">Workshops</button>
             <button class="filter-btn" type="button" data-filter="congresos">Congresos</button>
+            <button class="filter-btn" type="button" data-filter="artisticos">Artísticos</button>
           </div>
         </div>
 
@@ -82,6 +83,14 @@
       </div>
     </section>
   </main>
+
+  <a href="https://wa.me/5491155893054?text=Hola%2C%20me%20gustaria%20organizar%20un%20evento%20con%20ustedes%21"
+    class="whatsapp-button" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" onclick="if (typeof gtag === 'function') { gtag('event', 'click_whatsapp', {
+      event_category: 'contacto',
+      event_label: 'Botón flotante WhatsApp'
+    }); }">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
 
   <footer>
     <div class="container-footer">
