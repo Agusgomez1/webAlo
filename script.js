@@ -116,7 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
   initLoader();
   initNavbar();
   initReveal();
+  initIntroCarousel();
   initVideoModals();
+  initTestimonialCards();
   initGallery();
   initWorkshops();
   initFormSecurityFields();
@@ -149,6 +151,22 @@ function initLoader() {
   });
   window.addEventListener("load", hideLoader, { once: true });
   window.setTimeout(hideLoader, 2500);
+}
+
+function initIntroCarousel() {
+  const carousel = document.querySelector("[data-intro-carousel]");
+  if (!carousel) return;
+
+  const slides = Array.from(carousel.querySelectorAll("img"));
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (slides.length < 2 || reduceMotion) return;
+
+  let activeIndex = 0;
+  window.setInterval(function () {
+    slides[activeIndex].classList.remove("is-active");
+    activeIndex = (activeIndex + 1) % slides.length;
+    slides[activeIndex].classList.add("is-active");
+  }, 4800);
 }
 
 function initNavbar() {
@@ -238,11 +256,78 @@ function initVideoModals() {
     const video = document.getElementById(item.videoId);
 
     if (modal && video) {
-      modal.addEventListener("hidden.bs.modal", function () {
+      function loadVideo() {
+        if (!video.getAttribute("src") && video.dataset.videoSrc) {
+          video.setAttribute("src", video.dataset.videoSrc);
+          video.load();
+        }
+      }
+
+      function cleanVideo() {
         video.pause();
-        video.currentTime = 0;
-      });
+        video.removeAttribute("src");
+        video.load();
+      }
+
+      modal.addEventListener("show.bs.modal", loadVideo);
+      modal.addEventListener("hidden.bs.modal", cleanVideo);
+
+      // Fallback accesible si el bundle remoto de Bootstrap no estuviera disponible.
+      if (!window.bootstrap?.Modal) {
+        const selector = "[data-bs-target=\"#" + item.modalId + "\"]";
+
+        function closeFallback() {
+          modal.classList.remove("show", "testimonial-modal--fallback");
+          modal.style.display = "none";
+          modal.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("modal-open");
+          cleanVideo();
+        }
+
+        document.querySelectorAll(selector).forEach(function (trigger) {
+          trigger.addEventListener("click", function () {
+            loadVideo();
+            modal.style.display = "block";
+            modal.classList.add("show", "testimonial-modal--fallback");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-open");
+            modal.querySelector(".btn-close")?.focus();
+          });
+        });
+
+        modal.querySelector("[data-bs-dismiss=\"modal\"]")?.addEventListener("click", closeFallback);
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal) closeFallback();
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && modal.classList.contains("testimonial-modal--fallback")) closeFallback();
+        });
+      }
     }
+  });
+}
+
+function initTestimonialCards() {
+  document.querySelectorAll(".testimonial-card").forEach(function (card) {
+    const trigger = card.querySelector("[data-bs-target]");
+    if (!trigger) return;
+
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-label", "Abrir " + (card.querySelector("h3")?.textContent || "testimonio en video"));
+
+    function openFromCard(event) {
+      if (event.target.closest("button, a")) return;
+      trigger.click();
+    }
+
+    card.addEventListener("click", openFromCard);
+    card.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        trigger.click();
+      }
+    });
   });
 }
 
@@ -285,6 +370,20 @@ function initGallery() {
       });
       button.classList.add("active");
       renderGallery(button.dataset.filter);
+      window.requestAnimationFrame(function () {
+        const navbar = document.querySelector(".alo-navbar");
+        const offset = (navbar ? navbar.getBoundingClientRect().height : 0) + 24;
+        const targetTop = galleryGrid.getBoundingClientRect().top + window.scrollY - offset;
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.scrollTo({ top: Math.max(0, targetTop), behavior: reduceMotion ? "auto" : "smooth" });
+
+        window.setTimeout(function () {
+          const correctedTop = galleryGrid.getBoundingClientRect().top + window.scrollY - offset;
+          if (Math.abs(window.scrollY - correctedTop) > 8) {
+            window.scrollTo({ top: Math.max(0, correctedTop), behavior: "auto" });
+          }
+        }, 700);
+      });
     });
   });
 
